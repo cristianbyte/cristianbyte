@@ -1,0 +1,79 @@
+@font-face {
+    font-family: second;
+    src: url(../assets/Sloth-Regular.ttf);
+}
+
+@font-face {
+    font-family: logo;
+    src: url(../assets/slothBold.ttf);
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    margin: 0 5vw;
+    height: 10vh;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid var(--gray);
+    color: white;
+}
+
+.menu__logo{
+    font-family: logo;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.menu__logo::after{
+    content: '.';
+    position: relative;
+    font-size: 2rem;
+    color: #ff00ff;
+}
+
+.menu__option{
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: calc(10rem + 20%);
+    height: 10vh;
+    justify-content: space-between;
+}
+
+.menu__option--i{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: second;
+    color: var(--gray);
+    transition: .1s ease-out;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.menu__option--i:hover{
+    color: var(--platinum);
+    text-shadow: 0px 0px 5px var(--platinum);
+}
+
+@media (orientation: portrait) {
+    .menu{
+        justify-content: center;
+    }
+    .menu__option{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 8vh;
+        justify-content: space-evenly;
+        border-top: 1px solid var(--gray);
+    }
+    .menu__option svg{
+        width: 20%;
+        height: 2rem;
+        color: var(--gray);
+        cursor: pointer;
+    }
+}
