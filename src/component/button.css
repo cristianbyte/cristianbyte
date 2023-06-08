@@ -1,0 +1,26 @@
+/* Button.css */
+
+.button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .primary-button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .secondary-button {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .danger-button {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  

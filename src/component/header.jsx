@@ -1,5 +1,6 @@
 import './header.css'
-import GoldenGate from '../assets/drawing.svg'
+import { Button } from './button.jsx'
+import './button.css';
 
 export default function Header(){
     return(
@@ -15,8 +16,7 @@ export default function Header(){
                     Being <span className='me__different'> different </span> and <span className='me__different'> memorable </span> on the internet.
                 </h1>
                 <div >
-                    <button className="me__contact" > Contact </button>
-                    <button className="me__contact" > Projects </button>
+                    <Button type={'button secondary-button'} text='contact' action={()=>alert('You click the button')}/>
                 </div>
             </div>
         </div>
