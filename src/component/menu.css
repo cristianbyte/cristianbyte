@@ -16,8 +16,8 @@
     margin: 0 5vw;
     height: 10vh;
     font-family: Arial, Helvetica, sans-serif;
-    border-bottom: 1px solid var(--gray);
-    color: white;
+    border-bottom: 1px solid var(--second);
+    color: var(--second);
 }
 
 .menu__logo{
@@ -30,8 +30,8 @@
     content: '.';
     position: relative;
     font-size: 2rem;
-    color: #ff00ff;
-}
+    color: var(--third);
+} 
 
 .menu__option{
     display: flex;
@@ -54,8 +54,8 @@
 }
 
 .menu__option--i:hover{
-    color: var(--platinum);
-    text-shadow: 0px 0px 5px var(--platinum);
+    color: var(--second);
+    text-shadow: 0px 0px 5px var(--second);
 }
 
 @media (orientation: portrait) {

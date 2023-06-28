@@ -5,7 +5,7 @@
     height: 80vh;
     overflow: hidden;
     padding-top: 5vh;
-    color: var(--platinum);
+    color: var(--second);
 }
 
 .me{
@@ -24,7 +24,7 @@
 }
 
 .me__call{
-    background: -webkit-linear-gradient(0deg, var(--platinum) 20%, var(--gray) 80%);
+    background: -webkit-linear-gradient(0deg, var(--second) 20%, var(--fourth) 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
@@ -43,28 +43,27 @@
     padding: 0 1rem;
     height: 3rem;
     cursor: pointer;
-    color: var(--fuchsia);
-    background-color: black;
+    color: var(--third);
     border-radius: 10px;
     font-weight: 500;
     align-self: start;
-    border: 2px solid var(--fuchsia);
+    border: 2px solid var(--third);
     transition: .2s ease;
 }
 
 .me__contact:hover{
-    background-color: var(--fuchsia);
-    color: black;
+    background-color: var(--third);
+    color: var(--first);
 }
 
 .me__contact:nth-last-child(1){
-    color: var(--gray);
+    color: var(--fourth);
     border: none;
 }
 
 .me__contact:nth-last-child(1):hover{
-    background-color: var(--gray);
-    color: black;
+    background-color: var(--fourth);
+    color: var(--first);
 }
 
 .header svg{

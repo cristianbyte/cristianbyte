@@ -1,5 +1,6 @@
 import Menu from './component/menu'
 import Header from './component/header'
+import Skils from './component/Skils'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Menu/>
       <Header/>
+      <Skils/>
     </>
   )
 }

@@ -1,12 +1,12 @@
 :root{
-  --platinum: #E0E0E0;
-  --gray: #7A7A7A;
-  --fuchsia: #ff00ff;
-
+  --first: #000000;
+  --second: #E0E0E0;
+  --third: #ff00ff;
+  --fourth: #7A7A7A;
 }
 
 body{
-  background-color: black;
+  background-color: var(--first);
 }
 
 /*
@@ -20,6 +20,7 @@ body{
 */
 * {
   margin: 0;
+  font-family: second;
 }
 /*
   3. Allow percentage-based heights in the application

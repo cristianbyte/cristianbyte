@@ -16,7 +16,9 @@ export default function Header(){
                     Being <span className='me__different'> different </span> and <span className='me__different'> memorable </span> on the internet.
                 </h1>
                 <div >
-                    <Button type={'button secondary-button'} text='contact' action={()=>alert('You click the button')}/>
+                    <Button type={'button secondary-button'} text='Contact' action={()=>alert('You click the button')}/>
+                    <Button type={'button primary-button'} text='Projects' action={()=>alert('You click the button')}/>
+
                 </div>
             </div>
         </div>
