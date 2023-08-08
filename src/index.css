@@ -20,6 +20,7 @@ body{
 */
 * {
   margin: 0;
+  padding: 0;
   font-family: second;
 }
 /*
@@ -27,6 +28,7 @@ body{
 */
 html, body {
   height: 100%;
+  overflow-x: hidden;
 }
 /*
   Typographic tweaks!
@@ -61,4 +63,18 @@ p, h1, h2, h3, h4, h5, h6 {
 */
 #root, #__next {
   isolation: isolate;
+}
+
+a:link{
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0b1956;
+  border-radius: 5px;
 }

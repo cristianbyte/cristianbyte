@@ -66,12 +66,34 @@
     color: var(--first);
 }
 
-.header svg{
+.social{
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    left: 3vw;
+    top: 40vh;
+}
+
+.social::after{
+    content: '';
     position: absolute;
-    stroke: #1a1a1a;
-    z-index: -1;
-    width: 100%;
-    object-fit: fill;
+    bottom: -30vh;
+    height: 30vh;
+    width: 2px;
+    background-color: var(--second);
+}
+
+
+
+.social .social__icon, .social svg{
+    text-decoration: none;
+    color: var(--second);
+    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 @media (orientation: portrait) {

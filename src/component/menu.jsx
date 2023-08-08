@@ -1,5 +1,4 @@
 import './menu.css'
-import { BsHouseDoor, BsFolder, BsInbox, BsChatLeftDots } from 'react-icons/bs';
 import React, { useState, useEffect } from 'react';
 
 export default function Menu() {
@@ -22,20 +21,10 @@ export default function Menu() {
         <div className="menu__logo">
             cristianbyte
         </div>
-        <div className="menu__option">{
-          isHorizontal ? <>
-              <div className="menu__option--i">Home</div>
-              <div className="menu__option--i">Projects</div>
-              <div className="menu__option--i">About</div>
-              <div className="menu__option--i">Contact</div> 
-            </> : <>
-            <BsHouseDoor/>
-            <BsFolder/>
-            <BsInbox/>
-            <BsChatLeftDots/>
-
-            </>
-          }
+        <div className="menu__option">
+          <div className="menu__option--i">Projects</div>
+          <div className="menu__option--i">About</div>
+          <div className="menu__option--i">Contact</div> 
         </div>
     </div>
   )
