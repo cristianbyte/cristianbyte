@@ -1,0 +1,142 @@
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup__form {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 3vw;
+    gap: .8rem;
+    background: white;
+    width: 50vw;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup__title{
+    color: var(--first);
+}
+
+.close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    top: -4%;
+    left: 95%;
+    font-size: 1.5rem;
+    color: var(--second);
+    border-radius: 40px;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--fourth);
+    text-align: center;
+    user-select: none;
+}
+
+.subject{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    width: 100%;
+    height: auto;
+}
+
+.subject h4{
+    width: auto;
+    color: black;
+    text-transform: capitalize;
+}
+
+.subject__option input[type="radio"] {
+    display: none;
+}
+
+.subject__option{
+    margin-bottom: .5rem;
+}
+  
+label{
+    user-select: none;
+    cursor: pointer;
+    color: var(--second);
+    border: 2px solid;
+    font-size: 1rem;
+    padding: 0 .5rem;
+    font-weight: 800;
+    border-radius: 2rem;
+}
+
+input[type="text"]{
+    border: unset;
+    text-transform: capitalize;
+    font-weight: 500;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--first);
+}
+
+input[type="radio"]:checked + label{
+    border: 2px solid var(--third);
+    color: var(--third);
+}
+
+.subject__option input[type="radio"]:checked{
+    background-color: #007bff; /* Cambiar el color al seleccionar */
+    color: #007bff; /* Cambiar el color del borde al seleccionar */
+}
+
+textarea {
+    border-radius: 5px;
+    padding: .5rem;
+    width: 100%;
+    min-height: 10vh;
+    height: auto;
+    resize: none;
+    overflow-y: scroll;
+    border: none;
+    background-color: var(--second);
+}
+
+@media (orientation: portrait) {
+    .popup__form {
+        width: 70vw;
+        height: 70vh;
+    }
+    .popup__form {
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    input[type="text"]{
+        width: 100%;
+    }
+}
+
+.popup__send{
+    width: 100%;
+    height: 6vh;
+    background-color: white;
+    border: 2px solid var(--third);
+    border-radius: 5vw;
+    color: var(--third);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.popup__send:hover{
+    background-color: var(--third);
+    color: white;
+}

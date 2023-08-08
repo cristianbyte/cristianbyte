@@ -1,9 +1,14 @@
 import './header.css'
 import { BsInstagram , BsGithub, BsLinkedin } from 'react-icons/bs'
 import { Button } from './button.jsx'
+import  Popup  from './popup.jsx'
+import React, { useState } from 'react';
 import './button.css';
 
 export default function Header(){
+
+    const [isPopupOpen, setPopupOpen] = useState(false);
+
     return(
         <div className='header'>
             <div className="me">
@@ -16,17 +21,18 @@ export default function Header(){
                 <h1 className="me__call">    
                     Being <span className='me__different'> different </span> and <span className='me__different'> memorable </span> on the internet.
                 </h1>
-                <div >
-                    <Button type={'button secondary-button'} text='Contact' action={()=>alert('You click the button')}/>
+                <div>
+                    <Button type={'button secondary-button'} text='Contact' action={()=>{setPopupOpen(!isPopupOpen)}}/>
+                    <Popup isOpen={isPopupOpen} onClose={()=>{setPopupOpen(!isPopupOpen)}} />
                     <Button type={'button primary-button'} text='Projects' action={()=>alert('You click the button')}/>
                 </div>
             </div>
             <div className="social">
-                <a className='social__icon' href="https://www.instagram.com/cristianbyte" target="_blank" title="Sígueme en Instagram" rel="noopener">
-                    <BsInstagram />
-                </a>
                 <a className='social__icon' href="https://www.github.com/cristianbyte" target="_blank" title="Visitame en github" rel="noopener">
                     <BsGithub/>
+                </a>
+                <a className='social__icon' href="https://www.instagram.com/cristianbyte" target="_blank" title="Sígueme en Instagram" rel="noopener">
+                    <BsInstagram />
                 </a>
                 <a className='social__icon' href="https://www.linkedin.com/in/cristianbyte" target="_blank" title="Sígueme en LinkeIn" rel="noopener">
                     <BsLinkedin/>
@@ -37,6 +43,7 @@ export default function Header(){
                     </svg>
                 </a>
             </div>
+
         </div>
     )
 }

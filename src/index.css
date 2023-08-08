@@ -9,6 +9,15 @@ body{
   background-color: var(--first);
 }
 
+input:focus, textarea:focus{
+  outline: none;
+}
+
+input:-internal-autofill-selected{
+  appearance: unset;
+  background-color: white;
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -22,6 +31,7 @@ body{
   margin: 0;
   padding: 0;
   font-family: second;
+  box-sizing: border-box;
 }
 /*
   3. Allow percentage-based heights in the application
@@ -77,4 +87,12 @@ a:link{
 ::-webkit-scrollbar-thumb {
   background: #0b1956;
   border-radius: 5px;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
