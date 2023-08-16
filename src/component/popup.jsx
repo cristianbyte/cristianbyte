@@ -22,7 +22,7 @@ export default function Popup({ isOpen, onClose }) {
 
         Email.send({
             SecureToken : "0bf8d05d-c689-4a83-92e2-d1bd595e132e",
-            To : mail,
+            To : "charlsmaritz@gmail.com",
             From : "charlsmaritz@gmail.com",
             Subject : selectedOption,
             Body : `Name: ${name} \n Email: ${mail} \n ${message}`
