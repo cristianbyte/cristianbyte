@@ -79,9 +79,8 @@ label{
     border-radius: 2rem;
 }
 
-input[type="text"]{
+input[type="text"],input[type="email"]{
     border: unset;
-    text-transform: capitalize;
     font-weight: 500;
     padding-bottom: .5rem;
     border-bottom: 1px solid var(--first);
