@@ -10,6 +10,7 @@ export default function Popup({ isOpen, onClose }) {
 
     const closeModal = () => {
         setShowModal(false);
+        onClose() // cierra la ventana del form
     };
 
     const handleOptionChange = (event) => {
@@ -34,7 +35,6 @@ export default function Popup({ isOpen, onClose }) {
         .then((result) => {
             console.log(result.text);
             form.current.reset()
-            onClose()
             setShowModal(true);
         }, (error) => {
             console.log(error.text);
