@@ -24,7 +24,7 @@ export default function Header(){
                 <div>
                     <Button type={'button secondary-button'} text='Contact' action={()=>{setPopupOpen(!isPopupOpen)}}/>
                     <Popup isOpen={isPopupOpen} onClose={()=>{setPopupOpen(!isPopupOpen)}} />
-                    <Button type={'button primary-button'} text='Projects' action={()=>alert('You click the button')}/>
+                    <Button type={'button primary-button'} text='Projects' action={()=>alert('Work in progress for this section')}/>
                 </div>
             </div>
             <div className="social">

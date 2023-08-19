@@ -17,16 +17,20 @@ export default function Menu() {
   }, []);
 
   return (
-    <div className="menu">
-        <div className="menu__logo">
-            cristianbyte
-        </div>
-        <div className="menu__option">
-          <div className="menu__option--i">Projects</div>
-          <div className="menu__option--i">About</div>
-          <div className="menu__option--i">Contact</div> 
-        </div>
-    </div>
+    <nav className="menu">
+      <a href="/" className="menu__logo-link">cristianbyte</a>
+      <ul className="menu__options">
+        <li className="menu__option">
+          <a href="/projects" className="menu__option-link" unselectable='true'>Projects</a>
+        </li>
+        <li className="menu__option">
+          <a href="/about" className="menu__option-link">About</a>
+        </li>
+        <li className="menu__option">
+          <a href="/contact" className="menu__option-link">Contact</a>
+        </li>
+      </ul>
+    </nav>
   )
 }
 
