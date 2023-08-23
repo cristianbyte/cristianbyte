@@ -24,13 +24,15 @@
   
   .secondary-button {
     background-color: var(--third);
-    color: var(--first);
+    color: var(--second);
+    box-shadow: 0px 0px 3px 1px var(--third);
+    transition: .4s ease;
   }
 
   .secondary-button:hover {
-    background-color: transparent;
     border: 2px solid var(--third);
-    color: var(--third);
+    text-shadow: 0 0 3px white;
+    box-shadow: 0 0 13px 1px var(--third);
   }
   
   .danger-button {

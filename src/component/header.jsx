@@ -15,11 +15,8 @@ export default function Header(){
                 <div className="me__photo">
                     <img src="https://avatars.githubusercontent.com/u/61919822?v=4" alt="avatar from www" />
                 </div>
-                <p className="me__greeting">
-                    Hi, I'm Cristian 👋  
-                </p>
                 <h1 className="me__call">    
-                    Being <span className='me__different'> different </span> and <span className='me__different'> memorable </span> on the internet.
+                    Bringing your <div className="heartbeat"> idea </div> to life through high-impact software.
                 </h1>
                 <div>
                     <Button type={'button secondary-button'} text='Contact' action={()=>{setPopupOpen(!isPopupOpen)}}/>
@@ -47,3 +44,5 @@ export default function Header(){
         </div>
     )
 }
+
+// Hello, I'm [Your Name], a passionate front-end developer with expertise in HTML, CSS, and JavaScript, including frameworks like React. I've crafted an interactive pokedex, a JavaScript-based video game, and diverse web pages. My focus is on delivering engaging and dynamic web experiences, and I'm extending my skills to backend development for a holistic perspective. Explore my projects for concrete examples of my work.

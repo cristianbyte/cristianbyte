@@ -24,13 +24,27 @@
 }
 
 .me__call{
-    background: -webkit-linear-gradient(0deg, var(--second) 20%, var(--fourth) 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--second);
     text-align: center;
+    text-transform: none;
     width: 100%;
     font-size: 2.5rem;
 }
+
+.heartbeat{
+    display: inline-block;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 20% {
+      transform: scale(1);
+    }
+    
+    10%,100% {
+      transform: scale(.95);
+    }
+  }
 
 .me > div:last-child{
     display: flex;
