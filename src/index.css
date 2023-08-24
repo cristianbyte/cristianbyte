@@ -31,7 +31,6 @@ input:-internal-autofill-selected{
   margin: 0;
   padding: 0;
   font-family: second;
-  box-sizing: border-box;
 }
 /*
   3. Allow percentage-based heights in the application
@@ -39,6 +38,7 @@ input:-internal-autofill-selected{
 html, body {
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 /*
   Typographic tweaks!
@@ -81,12 +81,10 @@ a:link{
 
 ::-webkit-scrollbar {
   width: 10px;
-
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0b1956;
-  border-radius: 5px;
+  background: var(--third);
 }
 
 /* Change the white to any color */
