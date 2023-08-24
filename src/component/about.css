@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 100vh;
 }
 
 .about__description{
@@ -63,4 +63,20 @@
     transform: scale(3.2);
     border-radius: 50%;
     grid-area: 2 / 2 / 3 / 3;
+}
+
+@media (orientation:portrait){
+    
+    .about{
+        height: 60vh;
+    }
+    .about__description{
+        width: 80vw;
+        transform: translateX(1rem);
+        padding-bottom: 30vh;
+    }
+    .about__description--aside{
+        max-width: 50%;
+        font-size: 1rem;
+    }
 }
