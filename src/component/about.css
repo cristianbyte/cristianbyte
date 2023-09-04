@@ -21,6 +21,9 @@
     position: relative;
     max-width: 45%;
     font-size: 1.3rem;
+    transform: scale(.9);
+    transition: 1s ease-in;
+    opacity: 0;
 }
 
 .about__description--aside:first-of-type{
