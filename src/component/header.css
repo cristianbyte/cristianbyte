@@ -67,27 +67,16 @@
     flex-direction: column;
     align-items: center;
     height: 30vh;
-    left: 3vw;
+    left: 5vw;
     top: 40vh;
 }
-
-.social::after{
-    content: '';
-    position: absolute;
-    bottom: -30vh;
-    height: 30vh;
-    width: 2px;
-    background-color: var(--second);
-}
-
-
 
 .social .social__icon, .social svg{
     text-decoration: none;
     color: var(--second);
-    font-size: 2rem;
-    width: 2rem;
-    height: 2rem;
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 @media (orientation: portrait) {

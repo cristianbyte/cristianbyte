@@ -1,9 +1,11 @@
 
 .about{
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
 }
 
 .about__description{
@@ -13,8 +15,7 @@
     align-items: center;
     gap: 10vh;
     color: var(--second);
-    width: 60vw;
-    height: 40vh;
+    box-sizing: border-box;
 }
 
 .about__description--aside{
@@ -75,8 +76,8 @@
     }
     .about__description{
         width: 80vw;
-        transform: translateX(1rem);
-        padding-bottom: 30vh;
+        height: 100vh;
+        margin-top: 5rem;
     }
     .about__description--aside{
         max-width: 50%;
