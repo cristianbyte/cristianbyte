@@ -3,10 +3,17 @@
   src: url(../fonts/DujitsuFont-Demo.otf);
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
+  scroll-behavior: smooth;
   width: 100vw;
   overflow-x: hidden;
   background-color: black;
+  display: flex;
+  flex-direction: column;
 }
 header {
   height: 100vh;
@@ -19,13 +26,13 @@ header {
 .anime__nav {
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 0rem;
   display: flex;
+  flex-direction: column;
   margin-left: 2rem;
   text-transform: uppercase;
   font-size: calc(2vh + 2vw);
   padding-right: 2rem;
-  color: white;
   font-family: "dujitsu";
   z-index: 100;
 }
@@ -61,12 +68,14 @@ header {
   }
 }
 
-.anime__nav li {
+.anime__nav a{
+  color: white;
+  text-decoration: none;
   cursor: pointer;
   margin-bottom: 1rem;
 }
 
-.anime__nav li:hover {
+.anime__nav a:hover {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px;
 }
