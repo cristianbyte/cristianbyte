@@ -127,3 +127,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+::-webkit-scrollbar{
+  width: 8px;
+  background-color: #33333322;
+  border-radius: 20px;
+}
+::-webkit-scrollbar:window-inactive {
+  display: none;
+}
+::-webkit-scrollbar-thumb  {
+  background-color: #aaa;
+  border-radius: 6px;
+}

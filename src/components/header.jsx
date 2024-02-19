@@ -1,4 +1,5 @@
 import './header.css'
+import './_global.css'
 import image from '../assets/profile.png'
 
 export default function AnimeHeader() {
