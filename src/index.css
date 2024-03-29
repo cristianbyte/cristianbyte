@@ -1,0 +1,16 @@
+:root{
+    --white: #F5F5F5;
+    --blue: #364F6B;
+    --aqua: #3FC1C9;
+    --pantone: #FC5185;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+}
