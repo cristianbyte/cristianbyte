@@ -8,8 +8,7 @@ export default function Cursor() {
     function handleMouseMove(e) {
       const cursor = cursorRef.current;
       if (cursor) {
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        console.log(e.clientX, e.clientY);
+        cursor.style.transform = `translate(${e.clientX - 15 }px, ${e.clientY - 15 }px) scale(2)`;
       }
     }
 

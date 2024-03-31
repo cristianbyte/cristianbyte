@@ -20,5 +20,11 @@
         display: flex;
         align-items: center;
         gap: 3rem;
+
     }
+}
+
+.link:hover {
+    cursor: none;
+    transform: scale(1.2);
 }

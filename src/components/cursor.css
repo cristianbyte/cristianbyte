@@ -4,13 +4,12 @@ body{
 
 #cursor{
     transition: all .1s ease-out;
-    position: fixed;
+    position: absolute;
+    border: .3rem solid white;
     left: 0;
     top: 0;
-    width: 60px;
-    height: 60px;
-    background: red;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     pointer-events: none;
-    mix-blend-mode: difference;
 }

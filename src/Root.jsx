@@ -3,7 +3,7 @@ import Home from "./components/home"
 import Cursor from "./components/cursor"
 import './components/reset.css'
 
-export default function App() {
+export default function Root() {
   return (
     <>
       <Cursor/>
