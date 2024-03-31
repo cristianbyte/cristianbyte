@@ -10,10 +10,6 @@
     font-family: institute;
     gap: 1rem;
     
-    .home__title{
-        color: var(--white);
-        font-size: 4rem;
-    }
     
     .home__links{
         color: var(--white);
@@ -24,6 +20,10 @@
     }
 }
 
+.home__title{
+    color: var(--white);
+    font-size: 4rem;
+}
 .link:hover {
     cursor: none;
     transform: scale(1.2);
