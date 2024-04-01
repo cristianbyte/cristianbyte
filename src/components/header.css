@@ -20,55 +20,54 @@
     gap: 2rem;
     transform-style: preserve-3d;
     transform-origin: 0 -300%;
-    transform: translateY(40%) rotateX(-150deg) ;
-    animation: bouncing 2.5s ease-in-out forwards;
-    border: .3rem solid var(--white);
+    animation: appear .5s ease-in-out forwards;
+    border: .3rem solid var(--greeNeon);
+    box-shadow:  0 0 1rem 0 var(--greeNeon),inset 0 0 1rem var(--greeNeon);
     padding: 5%;
 }
 
-.animateR{
-    animation: bouncing 2.5s ease-in-out reverse;
-}
-
-@keyframes bouncing {
-    0%{
-        transform: translateY(40%) rotateX(-150deg) rotateZ(5deg);
-    }35%{
-        transform: translateY(30%) rotateX(15deg) rotateZ(-5deg);
-    }50%{
-        transform: translateY(30%) rotateX(-10deg) rotateZ(2deg);
-    }60%{
-        transform: translateY(30%) rotateX(10deg);
-    }80%{
-        transform: translateY(30%) rotateX(-5deg);
-    }100%{
-        transform: translateY(30%) rotateX(0deg);
+@keyframes appear {
+    0%,20%,40%{
+        opacity: 0;
+    }10%,30%,100%{
+        opacity: 1;
     }
 }
 
+.reverse-appear-animation {
+    animation-direction: reverse;
+    animation-duration: 3s;
+  }
+
 .header__title{
+    opacity: 0;
+    pointer-events: none;
     font-weight: bold;
     font-size: calc(3vh + 3vw);
+    animation: appear 1s .5s ease forwards;
+    
 }
 
 .header__options{
+    opacity: 0;
     display: flex;
     justify-content: center;
     font-size: 1.4rem;
     gap: 2rem;
-    
-    h3{
-        display: inline-block;
-        font-weight: bold;
-        text-transform: uppercase;
-        margin: 0 .5rem;
-        color: var(--white);
-    }
-    
-    span{
-        display: inline;
-        color: var(--gray);
-    }
+    animation: appear 1s .5s ease forwards;
+}
+
+.header__options h3{
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 .5rem;
+    color: var(--white);
+}
+
+.header__options span{
+    display: inline;
+    color: var(--gray);
 }
 
 .header__options a:hover h3{

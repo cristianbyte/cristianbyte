@@ -1,6 +1,6 @@
 import './nav.css'
 
-export default function Nav({ showAbout, showDefault }){
+export default function Nav(){
 
     return (
         <div className="nav">
@@ -11,10 +11,10 @@ export default function Nav({ showAbout, showDefault }){
             </div>
             <div className="nav__links">
                 <ul>
-                    <li><a onClick={showAbout}>about</a></li>
-                    <li><a href="#">projects</a></li>
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">LinkedIn</a></li>
+                    <li>about</li>
+                    <li>projects</li>
+                    <li>GitHub</li>
+                    <li>LinkedIn</li>
                 </ul>
             </div>
         </div>    
