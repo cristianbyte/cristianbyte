@@ -14,8 +14,6 @@
 - SQL
 
 ## GitHub Stats
-<details>
-<summary>GitHub Stats</summary>
 
 | <img align="right" src="https://github-readme-stats.vercel.app/api?username=cristianbyte&show_icons=true&theme=dark&line_height=25" alt="Cristian's github stats"/> | <img align="left" src="https://github-readme-streak-stats.herokuapp.com/?user=cristianbyte&theme=dark" width=""> |
 | --------- | --------- |
@@ -24,7 +22,6 @@
 
 | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianbyte&langs_count=10&theme=dark&layout=compact"> |
 | ----------- |
-</details>
 
 ## Working On
 - **Project**: TrikiNet game
