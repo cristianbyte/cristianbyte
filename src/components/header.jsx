@@ -2,19 +2,10 @@ import './header.css'
 
 export default function Header(){
 
-    function revert(e){
-        e.target.childNodes.forEach(el => {
-            el.classList.add('reverse-appear-animation');
-        })
-        setTimeout(()=>{
-            e.target.classList.add('reverse-appear-animation');
-        },1500)
-    }
-
     return (
         <>
             <div className="header"  >
-                <div className="header__board "  onClick={revert} >
+                <div className="header__board" >
                     <h1 className="header__title" >Hi!, I'm Cristian!</h1>
                     <div className="header__options">
                         <a href="https://github.com/cristianbyte/" target="_blank" >

@@ -6,3 +6,39 @@
   --greeNeon: #39FF14;
 }
 
+.app__scene{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  perspective: 1000px;
+  background-color: var(--black);
+  overflow: hidden;
+}
+
+.app__window{
+  transition: all 1s ease;
+  display: flex;
+  transform-style: preserve-3d;
+  transform: translateZ(-10rem) rotateX(20deg);
+  transform-origin: bottom;
+  animation: moving .01s ease infinite;
+  flex-direction: column;
+  justify-content: center;
+  /* filter: drop-shadow(0rem 0rem .2rem var(--greeNeon)); */
+  border: solid var(--greeNeon) .3rem;
+  box-shadow: 0 0 1rem 0 var(--greeNeon), inset 0 0 1rem 0 var(--greeNeon);
+  height: 100vh;
+  width: 90%;
+}
+
+@keyframes moving {
+  0%,89.9%{
+    transform: translateZ(-20rem) rotateX(20deg);
+    opacity: 1;
+  }90%,100%{
+    opacity: .5;
+    transform: translateZ(-20rem) translateY(2rem) rotateX(80deg);
+  }
+}
