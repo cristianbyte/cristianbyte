@@ -1,6 +1,15 @@
 import './nav.css'
 
-export default function Nav(){
+export default function Nav({setDisplays , actualDisplay}){
+
+
+    function toggleDisplay(){
+        if(actualDisplay == 'Home'){
+            return 'About'
+        }else{
+            return 'Home'
+        }
+    }
 
     return (
         <div className="nav">
@@ -10,7 +19,7 @@ export default function Nav(){
                 <a data-delay='3' href="mailto:charlsmaritz@gmail.com">Contact</a>
             </div>
             <div className="nav__links">
-                <a href='#' data-delay='1' >about</a>
+                <a href='#' data-delay='1' onClick={()=>{setDisplays(toggleDisplay())}} >{toggleDisplay()}</a>
                 <a href='#' data-delay='2' >projects</a>
                 <a href='#' data-delay='3' >GitHub</a>
                 <a href='#' data-delay='4' >LinkedIn</a>

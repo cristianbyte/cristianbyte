@@ -7,38 +7,90 @@
 }
 
 .app__scene{
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
   perspective: 1000px;
-  background-color: var(--black);
+  background-color: black;
   overflow: hidden;
+  cursor: url(./assets/cursor.svg), auto;
+}
+
+a{
+  cursor: url(./assets/pointer.svg), auto !important;
 }
 
 .app__window{
-  transition: all 1s ease;
+  transition: transform 1s ease-in;
   display: flex;
   transform-style: preserve-3d;
-  transform: translateZ(-10rem) rotateX(20deg);
+  transform: translateZ(-10rem) translateY(0rem) scale(1);
   transform-origin: bottom;
-  animation: moving .01s ease infinite;
   flex-direction: column;
   justify-content: center;
-  /* filter: drop-shadow(0rem 0rem .2rem var(--greeNeon)); */
+  /*filter: drop-shadow(0rem 0rem 1px var(--greeNeon)); */
   border: solid var(--greeNeon) .3rem;
+  animation: zoom-in 2s ease-out;
   box-shadow: 0 0 1rem 0 var(--greeNeon), inset 0 0 1rem 0 var(--greeNeon);
   height: 100vh;
-  width: 90%;
+  width: 90vw;
 }
 
-@keyframes moving {
-  0%,89.9%{
-    transform: translateZ(-20rem) rotateX(20deg);
+.backwards{
+  transform: translateZ(-1000rem) translateY(-150rem) scale(.1);
+}
+
+@keyframes zoom-in {
+  0%{
+    opacity: .1;
+    transform: translateZ(-1000rem) translateY(-150rem) scale(.1);
+  }80%{
     opacity: 1;
-  }90%,100%{
-    opacity: .5;
-    transform: translateZ(-20rem) translateY(2rem) rotateX(80deg);
+    transform: translateZ(-80rem) translateY(50rem) scale(.8);
+  }
+  90%,100%{
+    opacity: 1;
+    transform: translateZ(-10rem) translateY(0rem) scale(1);
+  }
+}
+
+.app__floor{
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg);
+  width: 300vw;
+  height: 200vh;
+  background-color: #00000000;
+  background-image:  linear-gradient(var(--greeNeon) 2px, transparent 2px), linear-gradient(90deg, var(--greeNeon) 2px, transparent 2px);
+  background-size: 30px 30px;
+  background-position: -1px -1px;
+  will-change: background-position; 
+  animation: forward linear 1s infinite ;
+}
+
+.horizon{
+  background-image: linear-gradient( #000000FF, #000000BB);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@keyframes forward {
+  0%{
+    background-position: 0px 0px;
+  }100%{
+    background-position: 0px 180px;
+  }
+}
+
+@media (orientation: portrait) {
+  .app__window{
+    height: 70vh;
+    width: 95vw;
   }
 }

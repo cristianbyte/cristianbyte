@@ -30,7 +30,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-  cursor: crosshair;
 }
 ol, ul {
 	list-style: none;
@@ -53,4 +52,15 @@ table {
 a{
   text-decoration: none;
   color: black;
+}
+
+::selection {
+    background: var(--greeNeon);
+    color: black;
+}
+
+/* Firefox */
+::-moz-selection {
+    background: var(--greeNeon);
+    color: black;
 }
