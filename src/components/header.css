@@ -45,7 +45,7 @@
     justify-content: center;
     font-size: 1.4rem;
     gap: 2rem;
-    animation: appear 1s 2s ease forwards;
+    animation: appear 1s 3s ease forwards;
 }
 
 .header__options h3{

@@ -15,23 +15,27 @@ function App() {
     setTimeout(() => {
       window.classList.remove('backwards');
       setDisplay(actual);
-    }, 1000);
+    }, 1100);
   };
 
   return (
-    <div className="app__scene" >
-        <div className="app__floor">
-          <div className="horizon"></div>
+    <>
+      <div className="app__scene" >
+        <div className="app__window">
+          {display === 'Home' ? (
+              <Header setDisplays={changeDisplay}  />
+            ) : (
+              <About setDisplays={changeDisplay} />
+            )}
+          <Nav setDisplays={changeDisplay} actualDisplay={display}/>
         </div>
-      <div className="app__window">
-        {display === 'Home' ? (
-            <Header setDisplays={changeDisplay}  />
-          ) : (
-            <About setDisplays={changeDisplay} />
-          )}
-        <Nav setDisplays={changeDisplay} actualDisplay={display}/>
       </div>
-    </div>
+      <div className="app__scene">
+          <div className="app__floor">
+            <div className="horizon"></div>
+          </div>
+      </div>
+    </>
   );
 }
 

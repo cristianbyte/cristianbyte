@@ -17,7 +17,6 @@
     display: flex;
     flex-direction: column;
     color: var(--white);
-    z-index: 100;
 }
 
 .nav__links a{
@@ -36,19 +35,16 @@
 }
 
 .nav__info > *:hover,.nav__links a:hover{
-   background-color: var(--greeNeon);
-   color: var(--black);
-   animation: appear .3s ease;
-   font-weight: bold;
-   opacity: 1;
+    background-color: var(--greeNeon);
+    color: var(--black);
+    font-weight: bold;
 }
 
 
 .nav__info > * , .nav__links > *{
     opacity: 0;
     color: var(--white);
-    animation: appear 1s ease;
-    opacity: 1;
+    animation: appear 1s ease forwards;
 }
 
 .nav__info > *:nth-child(1){ animation-delay: 2.2s;}

@@ -14,9 +14,14 @@
   width: 100vw;
   height: 100vh;
   perspective: 1000px;
-  background-color: black;
   overflow: hidden;
+  background-color: black;
   cursor: url(./assets/cursor.svg), auto;
+}
+
+.app__scene:first-child{
+  background-color: transparent;
+  z-index: 10;
 }
 
 a{
@@ -27,6 +32,8 @@ a{
   transition: transform 1s ease-in;
   display: flex;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
   transform: translateZ(-10rem) translateY(0rem) scale(1);
   transform-origin: bottom;
   flex-direction: column;
@@ -40,18 +47,14 @@ a{
 }
 
 .backwards{
-  transform: translateZ(-1000rem) translateY(-150rem) scale(.1);
+  transform: translateZ(-1000rem) translateY(-40rem) scale(.1);
 }
 
 @keyframes zoom-in {
   0%{
     opacity: .1;
-    transform: translateZ(-1000rem) translateY(-150rem) scale(.1);
-  }80%{
-    opacity: 1;
-    transform: translateZ(-80rem) translateY(50rem) scale(.8);
-  }
-  90%,100%{
+    transform: translateZ(-1000rem) translateY(-40rem) scale(.1);
+  }100%{
     opacity: 1;
     transform: translateZ(-10rem) translateY(0rem) scale(1);
   }
@@ -60,7 +63,9 @@ a{
 .app__floor{
   position: absolute;
   transform-style: preserve-3d;
-  transform: rotateX(80deg);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform: rotateX(88deg) rotateY(0deg);
   width: 300vw;
   height: 200vh;
   background-color: #00000000;
