@@ -1,3 +1,8 @@
+@font-face {
+    font-family: mars;
+    src: url(../font/Mars-Project.otf);
+}
+
 .nav{
     position: absolute;
     bottom: 0;
@@ -6,7 +11,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    font-family: monospace;
+    font-family: mars;
     text-transform: capitalize;
     padding: 5dvw;
     font-size: calc(1.1vh + .7vw);

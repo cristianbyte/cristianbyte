@@ -69,9 +69,8 @@ a{
   width: 300vw;
   height: 200vh;
   background-color: #00000000;
-  background-image:  linear-gradient(var(--greeNeon) 2px, transparent 2px), linear-gradient(90deg, var(--greeNeon) 2px, transparent 2px);
+  background-image:  linear-gradient( var(--greeNeon) 2px, transparent 2px), linear-gradient(90deg, var(--greeNeon) 2px, transparent 2px);
   background-size: 30px 30px;
-  background-position: -1px -1px;
   will-change: background-position; 
   animation: forward linear 1s infinite ;
 }
@@ -87,9 +86,9 @@ a{
 
 @keyframes forward {
   0%{
-    background-position: 0px 0px;
+    background-position: .1rem 0px;
   }100%{
-    background-position: 0px 180px;
+    background-position: .1rem 180px;
   }
 }
 
