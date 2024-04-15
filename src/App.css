@@ -45,6 +45,12 @@ a{
   height: 100vh;
   width: 90vw;
 }
+.app__window--clean{
+  border: none;
+  box-shadow: none;
+  transform: rotateY(-30deg);
+  transform-origin: right;
+}
 
 .backwards{
   transform: translateZ(-1000rem) translateY(-40rem) scale(.1);
@@ -61,6 +67,7 @@ a{
 }
 
 .app__floor{
+  transition: bottom 1s ease-in;
   position: absolute;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
@@ -73,14 +80,40 @@ a{
   background-size: 30px 30px;
   will-change: background-position; 
   animation: forward linear 1s infinite ;
+  bottom: -55vh;
 }
 
 .horizon{
   background-image: linear-gradient( #000000FF, #000000BB);
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
+}
+
+.opacity-d{
+  opacity: 0;
+  display: none;
+}
+
+.take-off{
+  bottom: -150vh;
+  transform: rotateX(120def);
+}
+
+.underlining{
+  position: relative;
+}
+
+.underlining::before{
+  bottom: 0%;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 50%;
+  background-color: var(--greeNeon);
+  opacity: .8;
   z-index: -1;
 }
 

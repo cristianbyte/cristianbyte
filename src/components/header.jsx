@@ -1,7 +1,6 @@
-import { useRef } from 'react'
 import './header.css'
 
-export default function Header(){
+export default function Header({setDisplays}){
 
 
     return (
@@ -12,11 +11,11 @@ export default function Header(){
                     <div className="header__options">
                         <a href="https://github.com/cristianbyte/" target="_blank" >
                             <span>see my</span>
-                            <h3>PROJECTS</h3> 
+                            <h3 >PROJECTS</h3> 
                         </a>
                         <a href="#">
                             <span>more</span>
-                            <h3>ABOUT</h3>
+                            <h3 onClick={()=>{setDisplays('About')}} >ABOUT</h3>
                             <span>me</span>
                         </a>
                     </div>

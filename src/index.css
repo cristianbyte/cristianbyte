@@ -49,9 +49,13 @@ table {
 
 /* Custom */
 
+*{
+	font-family: mars, monospace;
+}
+
 a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 ::selection {

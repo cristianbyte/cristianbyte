@@ -10,6 +10,13 @@ export default function Nav({setDisplays , actualDisplay}){
             return 'Home'
         }
     }
+    function toggleDisplay2(){
+        if(actualDisplay == 'Projects'){
+            return 'About'
+        }else{
+            return 'Projects'
+        }
+    }
 
     return (
         <div className="nav">
@@ -20,7 +27,7 @@ export default function Nav({setDisplays , actualDisplay}){
             </div>
             <div className="nav__links">
                 <a href='#' data-delay='1' onClick={()=>{setDisplays(toggleDisplay())}} >{toggleDisplay()}</a>
-                <a href='#' data-delay='2' >projects</a>
+                <a href='#' data-delay='2' onClick={()=>{setDisplays(toggleDisplay2())}}>{toggleDisplay2()}</a>
                 <a href='#' data-delay='3' >GitHub</a>
                 <a href='#' data-delay='4' >LinkedIn</a>
             </div>
