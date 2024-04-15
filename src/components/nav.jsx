@@ -11,10 +11,10 @@ export default function Nav({setDisplays , actualDisplay}){
         }
     }
     function toggleDisplay2(){
-        if(actualDisplay == 'Projects'){
-            return 'About'
-        }else{
+        if(actualDisplay == 'Home' || actualDisplay == 'About'){
             return 'Projects'
+        }else{
+            return 'About'
         }
     }
 

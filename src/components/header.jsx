@@ -1,6 +1,6 @@
 import './header.css'
 
-export default function Header({setDisplays}){
+export default function Header({changeDisplay}){
 
 
     return (
@@ -15,7 +15,7 @@ export default function Header({setDisplays}){
                         </a>
                         <a href="#">
                             <span>more</span>
-                            <h3 onClick={()=>{setDisplays('About')}} >ABOUT</h3>
+                            <h3 onClick={()=>{changeDisplay('About')}} >ABOUT</h3>
                             <span>me</span>
                         </a>
                     </div>

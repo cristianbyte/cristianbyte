@@ -11,21 +11,26 @@ function App() {
 
   
   const changeDisplay = (actual) => {
+    const window = document.querySelector('.app__window');
+    const windowAbout = document.querySelector('.app__window--clean');
+    const floor = document.querySelector('.app__floor');
     if(actual == 'Home' || actual == 'About'){
-      const window = document.querySelector('.app__window');
-      const floor = document.querySelector('.app__floor');
       window.classList.add('backwards');
       floor.classList.remove('take-off');
+      window.classList.remove('opacity-d');
+      windowAbout.classList.add('opacity-d');
       setTimeout(() => {
         window.classList.remove('backwards');
-        window.classList.remove('app__window--clean')
         setDisplay(actual);
       }, 1100);
     }else{
-      window.classList.add('backwards')
+      window.classList.add('backwards');
       floor.classList.add('take-off');
+      windowAbout.classList.remove('opacity-d');
       setTimeout(() => {
+        windowAbout.classList.add('forwards');
         window.classList.remove('backwards');
+        window.classList.add('opacity-d');
         setDisplay('Projects');
       }, 1000);
     }
@@ -34,15 +39,12 @@ function App() {
   return (
     <>
       <div className="app__scene" >
-        <div className={display=='Projects'?'app__window--clean':'app__window'}>
-          {display === 'Home' ?
-            <Header setDisplays={changeDisplay} />
-            :
-            display === 'About' ?
-              <About/>
-              :
-              <Projects/>
-          }
+        <div className="app__window" >
+          {display === 'Home' && <Header changeDisplay={changeDisplay} />}
+          {display === 'About' && <About/>}
+        </div>
+        <div className="app__window--clean opacity-d">
+          {display == 'Projects' && <Projects/> }
         </div>
         <Nav setDisplays={changeDisplay} actualDisplay={display}/>
       </div>
