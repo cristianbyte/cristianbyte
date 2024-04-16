@@ -12,26 +12,27 @@ function App() {
   
   const changeDisplay = (actual) => {
     const window = document.querySelector('.app__window');
-    const windowAbout = document.querySelector('.app__window--clean');
+    const windowProjects = document.querySelector('.app__window--clean');
     const floor = document.querySelector('.app__floor');
     if(actual == 'Home' || actual == 'About'){
       window.classList.add('backwards');
       floor.classList.remove('take-off');
       window.classList.remove('opacity-d');
-      windowAbout.classList.add('opacity-d');
+      windowProjects.classList.add('backwards');
       setTimeout(() => {
         window.classList.remove('backwards');
+        windowProjects.classList.add('opacity-d');
         setDisplay(actual);
-      }, 1100);
+      }, 500);
     }else{
       window.classList.add('backwards');
       floor.classList.add('take-off');
-      windowAbout.classList.remove('opacity-d');
+      windowProjects.classList.add('backwards');
+      windowProjects.classList.remove('opacity-d');
       setTimeout(() => {
-        windowAbout.classList.add('forwards');
-        window.classList.remove('backwards');
         window.classList.add('opacity-d');
         setDisplay('Projects');
+        windowProjects.classList.remove('backwards');
       }, 1000);
     }
   };

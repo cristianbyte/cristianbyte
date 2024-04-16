@@ -16,9 +16,11 @@
     padding: 5dvw;
     font-size: calc(1.1vh + .7vw);
     z-index: 100;
+    pointer-events: none;
 }
 
 .nav__links{
+    pointer-events: all;
     display: flex;
     flex-direction: column;
     color: var(--white);
@@ -29,6 +31,7 @@
 }
 
 .nav__info{
+    pointer-events: all;
     display: flex;
     flex-direction: column;
 }
