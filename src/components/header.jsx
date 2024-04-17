@@ -9,9 +9,9 @@ export default function Header({changeDisplay}){
                 <div className="header__board" >
                     <h1 className="header__title" >Hi!, I'm Cristian!</h1>
                     <div className="header__options">
-                        <a href="https://github.com/cristianbyte/" target="_blank" >
+                        <a href="#" >
                             <span>see my</span>
-                            <h3 >PROJECTS</h3> 
+                            <h3 onClick={()=>{changeDisplay('Projects')}} >PROJECTS</h3> 
                         </a>
                         <a href="#">
                             <span>more</span>

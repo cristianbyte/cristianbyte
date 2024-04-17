@@ -1,37 +1,43 @@
-@font-face {
-    font-family: legend;
-    src: url('../font/Legend.otf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 .project{
+    position: relative;
+    display: flex;
+    justify-content: center;
     perspective: 1000px;
+    margin: 0 2% 0 auto;
     height: 100%;
     width: 90%;
-    margin: 0 2% 0 auto;
 }
 
 .project__image{
-    position: sticky;
-    top: 10%;
-    animation: transform 1s ease;
+    position: relative;
+    top: 0%;
+    left: 0;
+    opacity: .7;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
-    transform: translate3d(-20vw,0,-10rem)  rotateY(40deg);
+    aspect-ratio: 16/9;
+    width: 100vw;
     transform-origin: left center;
-    background-color: slateblue;
-    opacity: .3;
-    width: 50%;
-    height: 100vh;
+    transform: translate3d(-50vw, 0, -90rem) rotateY(30deg);
+}
+
+iframe{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
 }
 
 .project__list{
     overflow: scroll;
     position: absolute;
     perspective: 1000px;
+    height: 100%;
     top: 0vh;
     right: 0;
-    height: 100%;
 }
 
 .project__list::-webkit-scrollbar {
@@ -48,9 +54,10 @@
     -moz-transform-style: preserve-3d;
     transform: rotateY(-30deg);
     transform-origin: right;
-    font-family: legend ,monospace;
-    font-weight: 900;
-    font-size: 20vw;
+    text-transform: uppercase;
+    font-family: "Anton", sans-serif;
+    font-weight: 800;
+    font-size: 15vw;
     color: var(--greeNeon);
     text-align: right;
 }

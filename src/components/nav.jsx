@@ -28,8 +28,9 @@ export default function Nav({setDisplays , actualDisplay}){
             <div className="nav__links">
                 <a href='#' data-delay='1' onClick={()=>{setDisplays(toggleDisplay())}} >{toggleDisplay()}</a>
                 <a href='#' data-delay='2' onClick={()=>{setDisplays(toggleDisplay2())}}>{toggleDisplay2()}</a>
-                <a href='#' data-delay='3' >GitHub</a>
-                <a href='#' data-delay='4' >LinkedIn</a>
+                <a href='https://github.com/cristianbyte' target="_blank" data-delay='3' >GitHub</a>
+                <a href='https://www.linkedin.com/in/cristianbyte/' target="_blank" data-delay='4' >LinkedIn</a>
+                <a href="http://" target="_blank" rel="noopener noreferrer"></a>
             </div>
         </div>    
         )
