@@ -1,8 +1,10 @@
 .about{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
+    overflow: hidden;
     margin: auto;
     width: 90%;
     height: 100%;
@@ -83,6 +85,10 @@
     filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
 }
 
+.filter{
+    filter: grayscale(100%) sepia(100%) hue-rotate(90deg);
+}
+
 .photo--filter img{
     width: 100%;
     height: 100%;
@@ -97,6 +103,44 @@
     height: 100%;
     content: '';
     animation: tv-static 1s linear infinite;
+}
+
+.technologies{
+    bottom: 10%;
+    position:absolute;
+    display: flex;
+    gap: 2rem;
+    width: 20rem;
+    height: 10vh;
+}
+
+.technologies__e svg{
+    position: relative;
+    width: 8vh;
+    height: 100%;
+    z-index: 21;
+}
+
+.technologies__e{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: 15vh;
+}
+
+.percentage {
+    height: 100%;
+}
+
+.technologies__e svg:first-child{
+    position: absolute;
+    width: 50vw;
+    stroke-linecap: square;
+    stroke-dasharray: 552.64px;
+    stroke-width: 15px;
+    stroke: var(--greeNeon);
 }
 
 @keyframes tv-static {
