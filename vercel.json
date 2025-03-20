@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/flores/*",
+        "destination": "https://flores.coder.red/$1"
+      }
+    ]
+}
