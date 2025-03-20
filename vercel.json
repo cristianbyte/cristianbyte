@@ -1,8 +1,8 @@
 {
     "rewrites": [
       {
-        "source": "/flores/*",
-        "destination": "https://flores.coder.red/$1"
+        "source": "/flores/:path*",
+        "destination": "https://flores.coder.red/:path*"
       }
     ]
-}
+  }
