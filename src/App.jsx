@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Analytics } from "@vercel/analytics/react"
 import About from './components/about';
 import Header from './components/header'
 import Nav from './components/nav'
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <>
+      <Analytics/>
       <div className="app__scene" >
         <div className="app__window" >
           {display === 'Home' && <Header changeDisplay={changeDisplay} />}
