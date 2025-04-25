@@ -1,6 +1,8 @@
 # Cristian Martinez
 
-👋 Hello! I'm Cristian, and I'm passionate about programming.
+👋 Hello! I'm Cristian, but in the tech world they call me cristianbyte. I started studying electronics at UdeA, but coding won me over. Since then, I’ve been learning and building: personal projects, APIs with Java and Spring Boot.
+
+I studied software development at Riwi, and even though I currently work as a delivery rider, I keep coding every day to earn my place in the tech industry. I don’t have professional experience yet, but I do have something that never fails me: passion, consistency, and a clear vision of where I’m headed.
 
 
 # 💫 About Me:
