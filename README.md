@@ -1,76 +1,24 @@
-![Cristianbyte, a retro-inspired theme for Astro.](./images/README.png)
+# Cristian Martinez
 
- cristianbyte is a retro-inspired theme for Astro, built using TypeScript, TailwindCSS, and of course, Astro.
+👋 Hello! I'm Cristian, but in the tech world they call me cristianbyte. I started studying electronics at UdeA, but coding won me over. Since then, I’ve been learning and building: personal projects, APIs with Java and Spring Boot.
 
-## Getting Started
+I studied software development at Riwi, and even though I currently work as a delivery rider, I keep coding every day to earn my place in the tech industry. I don’t have professional experience yet, but I do have something that never fails me: passion, consistency, and a clear vision of where I’m headed.
 
-[View the demo](https:// cristianbyte.dev) or [view the source code](https://github.com/RATIU5/ cristianbyte).
 
-Alternatively, you can create a new Astro project with  cristianbyte like this:
+# 💫 About Me:
+ I'm enthusiastic about programming and always eager to learn and create new things.<br>
+🔭 I’m currently working on LessMatch App<br>🌱 I’m currently learning English and Spring Boot<br>💬 Ask me about CSS
 
-```bash
-# pnpm
-pnpm create astro@latest --template RATIU5/ cristianbyte
-```
 
-> [!IMPORTANT]  
-> Currently, `pnpm` is the only supported package manager due to `npm` throwing peer-dependency conflicts.
+## 🌐 Socials:
+ [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/cristianbyte) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:charlsmaritz@gmail.com) [![Behance](https://img.shields.io/badge/Behance-1769ff?logo=behance&logoColor=white)](https://behance.net/cristianbyte) [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/cristianbyte) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/cristianbyte) [![Medium](https://img.shields.io/badge/Medium-12100E?logo=medium&logoColor=white)](https://medium.com/@cristianbyte) [![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?logo=Pinterest&logoColor=white)](https://pinterest.com/cristianbyte) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/cristianbyte) 
 
-## Features
+# 💻 Tech Stack:
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![Inkscape](https://img.shields.io/badge/Inkscape-e0e0e0?style=for-the-badge&logo=inkscape&logoColor=080A13) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=cristianbyte&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=cristianbyte&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=cristianbyte&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-- Dark & light mode
-- Customizable colors
-- 100 / 100 Lighthouse score
-- Fully accessible
-- Fully responsive
-- Type-safe
-- SEO-friendly
-
-## Customization
-
-The entire theme is fully customizable. The theme is setup a specific way to make it easy to customize.
-
-### Colors
-
-You can customize the colors of the theme by editing the `src/styles/global.css` file.
-This file uses Tailwind CSS and CSS variables to customize the colors of the theme.
- cristianbyte uses the following CSS variables:
-
-- `--color-zag-dark`: The dark color of the theme
-- `--color-zag-light`: The light color of the theme
-- `--color-zag-dark-muted`: The dark color of the theme with a slight opacity
-- `--color-zag-light-muted`: The light color of the theme with a slight opacity
-- `--color-zag-accent-light`: The light accent color of the theme
-- `--color-zag-accent-light-muted`: The light accent color of the theme with a slight opacity
-- `--color-zag-accent-dark`: The dark accent color of the theme
-- `--color-zag-accent-dark-muted`: The dark accent color of the theme with a slight opacity
-
-### Text
-
-You can customize the text of the theme by editing the `src/lib/variables.ts` file.
-This file contains all of the text used throughout the theme.
-
-For example, you can change the `username` variable to your own username and everywhere the username is used will be replaced with your username.
-
-```typescript
-export const GLOBAL = {
-  // Site metadata
-  username: " cristianbyte-fan123",
-
-  // ...
-
-  // Profile image
-  profileImage: "profile.webp",
-
-  // Menu items
-  menu: {
-    home: "/",
-    projects: "/projects",
-    blog: "/blog",
-  }
-};
-```
-
-## Ready To Try?
-
-Check out [the theme website](https:// cristianbyte.dev) to give it a spin!
+### ✍️ Random Dev Quote
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=light)
