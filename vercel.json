@@ -1,8 +1,0 @@
-{
-    "rewrites": [
-      {
-        "source": "/flores/:path*",
-        "destination": "https://flores.coder.red/:path*"
-      }
-    ]
-  }
