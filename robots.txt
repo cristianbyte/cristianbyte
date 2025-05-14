@@ -1,0 +1,17 @@
+# Permitir el acceso a todos los bots
+User-agent: *
+
+# Bloquear carpetas internas que no deben indexarse (pero permitimos imágenes dentro de /assets/images/)
+Disallow: /assets/
+Allow: /assets/images/
+
+# Bloquear página de error si existe
+Disallow: /404.html
+
+# (Opcional para el futuro) Evitar indexar URLs con parámetros comunes que generan duplicados
+Disallow: /*?*preview=
+Disallow: /*?*temp=
+# Puedes agregar más si decides usar ?lang=es o ?ref= por ejemplo
+
+# Sitemap para facilitar el rastreo
+Sitemap: https://cristianbyte.dev/sitemap.xml
