@@ -1,0 +1,21 @@
+:root{
+    --primary-color: #00ff00;
+    --secondary-color: #85ff8555;
+    --background-color: #000000;
+    --text-color: #00cc00;
+    --text-color-light: #00ff00;
+    --text-color-dark: #000000;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}

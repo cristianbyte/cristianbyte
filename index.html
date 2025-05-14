@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cristianbyte — Java Backend Developer</title>
     <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/console.css" />
+    <link rel="stylesheet" href="assets/css/window.css" />
   </head>
   <body>
     <div class="terminal-window">
@@ -15,11 +18,19 @@
       <button onclick="setLang('es')">Español</button>
       <button onclick="setLang('en')">English</button>
 
+      <div class="console">
+        
+        <div class="window">
+          <div id="console" class="console-log"></div>
+        </div>
+      </div>
+
       <footer class="section footer">
         <p>> © 2025 cristianbyte. All rights reserved.</p>
       </footer>
 
       <script src="./assets/js/i18n.js" ></script>
+      <script src="./assets/js/console.js"></script>
     </div>
   </body>
 </html>
