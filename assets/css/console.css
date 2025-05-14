@@ -1,0 +1,45 @@
+.console {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-end;
+  top: 0;
+  left: 0;
+  background-color: var(--background-color);
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.console-log {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin-top: 20px;
+  width: 100%;
+  color: var(--text-color);
+  padding: 1rem;
+  height: min-content;
+}
+
+.console-log::after {
+  content: "-";
+  animation: spin 1s steps(4) infinite;
+}
+
+@keyframes spin {
+  0% {
+    content: "-";
+  }
+  25% {
+    content: "/";
+  }
+  50% {
+    content: "|";
+  }
+  75% {
+    content: "\\";
+  }
+  100% {
+    content: "-";
+  }
+}
