@@ -1,73 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>cristianbyte — Java Backend Developer</title>
-  <link rel="stylesheet" href="src/styles.css" />
-</head>
-<body>
-  <div class="terminal-window">
-    <header class="section hero">
-      <h1>> Welcome, I’m <span class="highlight">cristianbyte</span></h1>
-      <p>Java Backend Developer — Building secure, scalable systems in the depths of data.</p>
-    </header>
-
-    <section class="section about">
-      <h2>> About</h2>
-      <p>
-        Soy un desarrollador backend con experiencia en Java, Spring Boot y arquitecturas distribuidas.
-        Me apasiona escribir código limpio, optimizar rendimiento y diseñar APIS robustas.
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cristianbyte — Java Backend Developer</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+  </head>
+  <body>
+    <div class="terminal-window">
+      <h1 data-i18n="title">Welcome to my portfolio</h1>
+      <p data-i18n="description">
+        I am a backend developer passionate about Java, Spring Boot, and more.
       </p>
-    </section>
+      <button onclick="setLang('es')">Español</button>
+      <button onclick="setLang('en')">English</button>
 
-    <section class="section skills">
-      <h2>> Skills</h2>
-      <pre>
-Java
-Spring Boot
-Docker & Kubernetes
-Git & CI/CD
-Bases de datos (SQL/NoSQL)
-JWT & Seguridad
-      </pre>
-    </section>
+      <footer class="section footer">
+        <p>> © 2025 cristianbyte. All rights reserved.</p>
+      </footer>
 
-    <section class="section projects">
-      <h2>> Projects</h2>
-      <article class="project">
-        <h3>• Project Alpha</h3>
-        <p>API de control de finanzas (Avex). Spring Boot, seguridad JWT, PostgreSQL.</p>
-        <a href="#">github.com/cristianbyte/avex</a>
-      </article>
-      <article class="project">
-        <h3>• Universo</h3>
-        <p>Full-stack con Spring Boot y React. Autenticación con JWT, deploy en Docker/Vercel.</p>
-        <a href="#">universo.coder.red</a>
-      </article>
-      <!-- Añade más proyectos aquí -->
-    </section>
-
-    <section class="section gallery">
-      <h2>> Snapshots</h2>
-      <div class="images">
-        <img src="public/images/screen1.png" alt="Captura proyecto 1"/>
-        <img src="public/images/screen2.png" alt="Captura proyecto 2"/>
-      </div>
-    </section>
-
-    <section class="section contact">
-      <h2>> Contact</h2>
-      <p>
-        <a href="https://www.linkedin.com/in/cristianbyte" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/cristianbyte" target="_blank">GitHub</a> |
-        <a href="mailto:cristianbyte@example.com">Email</a>
-      </p>
-    </section>
-
-    <footer class="section footer">
-      <p>> © 2025 cristianbyte. All rights reserved.</p>
-    </footer>
-  </div>
-</body>
+      <script src="./assets/js/i18n.js" ></script>
+    </div>
+  </body>
 </html>
