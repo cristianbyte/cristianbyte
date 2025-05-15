@@ -7,7 +7,7 @@ function getFormattedTime() {
 }
 async function getLocationData() {
   try {
-    const response = await fetch("!https://ipapi.co/json/");
+    const response = await fetch("https://ipapi.co/json/");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -20,6 +20,13 @@ async function getLocationData() {
 
 const consoleDiv = document.getElementById("console");
 const locationDiv = document.getElementById("location");
+
+locationDiv.addEventListener("click", () => {
+  window.playSound("select");
+  console.log("Location data clicked");
+  toggleSound();
+});
+
 const os = navigator.userAgentData.platform.toLowerCase();
 const logs = [
   "[coder.red boot sequence initialized...]",
