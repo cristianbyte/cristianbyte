@@ -8,20 +8,41 @@
   background-color: var(--background-color);
   width: 100dvw;
   height: 100dvh;
+
+  .location {
+    top: 20dvh;
+    right: 5px;
+    color: var(--text-color);
+    width: min(380px, 80dvw);
+    height: 30dvh;
+    z-index: 100;
+    background-color: var(--background-color);
+  }
+
+  .logs{
+    bottom: 10dvh;
+    width: min(2048px, 95dvw);
+    height: 60dvh;
+  }
 }
 
 .console-log {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  margin-top: 20px;
   width: 100%;
   color: var(--text-color);
   padding: 1rem;
   height: min-content;
 }
 
-.console-log::after {
+.console-location {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 1rem;
+}
+
+.console-log::after, .console-location::after {
   content: "-";
   animation: spin 1s steps(4) infinite;
 }
@@ -42,4 +63,27 @@
   100% {
     content: "-";
   }
+}
+
+@media(orientation: portrait) {
+  .console {
+    .location{
+      width: 70vw;
+      height: 25dvh;
+      .console-location{
+        line-height: .8rem;
+        font-size: .8rem;
+      }
+    }
+    .logs{
+      top: 40vh;
+      width: 85vw;
+      height: 30dvh;
+      .console-log{
+        line-height: .8rem;
+        font-size: .8rem;
+      }
+    }
+  }
+
 }

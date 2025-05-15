@@ -1,15 +1,13 @@
 .window {
-    display: flex;
+  display: flex;
   position: absolute;
-  margin-top: 20px;
-  height: 50dvh;
-  max-height: 50dvh;
-  width: calc(95dvw - 2rem);
+  padding-top: 20px;
   box-sizing: border-box;
   margin: 1rem;
   flex-direction: column;
   justify-content: flex-end;
   border: 2px solid var(--text-color);
+  animation: appear .4s steps(4);
 }
 
 .window::before{
@@ -32,4 +30,16 @@
     line-height: 1lh;
     height: 1.5rem;
     color: var(--text-color);
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    
 }
