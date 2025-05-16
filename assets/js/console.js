@@ -6,15 +6,34 @@ function getFormattedTime() {
   return `[${hours}:${minutes}:${seconds}]`;
 }
 async function getLocationData() {
+  const cacheKey = "location-data";
+  const cacheTimeKey = "location-data-timestamp";
+  const oneHour = 1000 * 60 * 60;
+
+  const cachedData = localStorage.getItem(cacheKey);
+  const cachedTime = localStorage.getItem(cacheTimeKey);
+
+  const now = Date.now();
+
+  if (cachedData && cachedTime && now - cachedTime < oneHour) {
+    return JSON.parse(cachedData);
+  }
+
   try {
     const response = await fetch("https://ipapi.co/json/");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
+
     const data = await response.json();
+
+    localStorage.setItem(cacheKey, JSON.stringify(data));
+    localStorage.setItem(cacheTimeKey, now.toString());
+
     return data;
   } catch (error) {
     console.error("Error fetching location data:", error.message);
+    if (cachedData) return JSON.parse(cachedData);
   }
 }
 
@@ -58,7 +77,7 @@ const logs = [
 ];
 
 const min = 10;
-const max = 500;
+const max = 200;
 
 function getRandomDelay() {
   return min + Math.floor(Math.random() * (max - min + 1));
