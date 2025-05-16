@@ -1,9 +1,9 @@
 :root{
-    --primary-color: #00ff00;
-    --secondary-color: #85ff8555;
+    --primary-color: #00fc00;
+    --secondary-color: #255025;
     --background-color: #000000;
-    --text-color: #00cc00;
-}
+    --text-color: #00AA00;
+} 
 
 /* scrollbar */
 ::-webkit-scrollbar {

@@ -8,10 +8,11 @@
   background-color: var(--background-color);
   width: 100dvw;
   height: 100dvh;
+  padding: 1rem;
 
   .location {
     top: 20dvh;
-    right: 5px;
+    right: 10px;
     color: var(--text-color);
     width: min(380px, 80dvw);
     height: 30dvh;
@@ -19,7 +20,7 @@
     background-color: var(--background-color);
   }
 
-  .logs{
+  .logs {
     bottom: 10dvh;
     width: min(2048px, 95dvw);
     height: 60dvh;
@@ -42,9 +43,113 @@
   padding: 1rem;
 }
 
-.console-log::after, .console-location::after {
+.console-log::after,
+.console-location::after {
   content: "-";
   animation: spin 1s steps(4) infinite;
+}
+
+.loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+  border: 3px solid var(--background-color);
+  outline: 2px solid var(--primary-color);
+  background-color: var(--background-color);
+  background: linear-gradient(
+    to right,
+    var(--primary-color) 0%,
+    var(--background-color) 0%,
+    var(--background-color) 100%
+  );
+  animation: loader 3s steps(6) forwards;
+}
+
+.loader::before {
+  position: absolute;
+  content: "";
+  font-size: .7rem;
+  font-weight: 800;
+  line-height: 20px;
+  mix-blend-mode: difference;
+  color: var(--text-color);
+  position: relative;
+  animation: load-text 3s steps(6) forwards;
+}
+
+@keyframes load-text {
+  0% {
+    content: "0%";
+  }
+  20% {
+    content: "18%";
+  }
+  40% {
+    content: "27%";
+  }
+  60% {
+    content: "36%";
+  }
+  80% {
+    content: "54%";
+  }
+  100% {
+    content: "90%";
+  }
+}
+
+@keyframes loader {
+  0% {
+    background: linear-gradient(
+      to right,
+      var(--primary-color) 0%,
+      var(--background-color) 0%,
+      var(--background-color) 100%
+    );
+  }
+  20% {
+    background: linear-gradient(
+      to right,
+      var(--primary-color) 18%,
+      var(--background-color) 0%,
+      var(--background-color) 100%
+    );
+  }
+  40% {
+    background: linear-gradient(
+      to right,
+      var(--primary-color) 27%,
+      var(--background-color) 0%,
+      var(--background-color) 100%
+    );
+  }
+  60% {
+    background: linear-gradient(
+      to right,
+      var(--primary-color) 36%,
+      var(--background-color) 0%,
+      var(--background-color) 100%
+    );
+  }
+  80% {
+    background: linear-gradient(
+      to right,
+      var(--primary-color) 54%,
+      var(--background-color) 0%,
+      var(--background-color) 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      to right,
+      var(--primary-color) 90%,
+      var(--background-color) 0%,
+      var(--background-color) 100%
+    );
+  }
 }
 
 @keyframes spin {
@@ -52,38 +157,37 @@
     content: "-";
   }
   25% {
-    content: "/";
+    content: "\\";
   }
   50% {
     content: "|";
   }
   75% {
-    content: "\\";
+    content: "/";
   }
   100% {
     content: "-";
   }
 }
 
-@media(orientation: portrait) {
+@media (orientation: portrait) {
   .console {
-    .location{
+    .location {
       width: 70vw;
       height: 25dvh;
-      .console-location{
-        line-height: .8rem;
-        font-size: .8rem;
+      .console-location {
+        line-height: 0.8rem;
+        font-size: 0.8rem;
       }
     }
-    .logs{
+    .logs {
       top: 40vh;
       width: 85vw;
       height: 30dvh;
-      .console-log{
-        line-height: .8rem;
-        font-size: .8rem;
+      .console-log {
+        line-height: 0.8rem;
+        font-size: 0.8rem;
       }
     }
   }
-
 }
