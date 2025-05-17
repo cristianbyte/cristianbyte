@@ -1,14 +1,11 @@
 :root{
-    --primary-color: #00ff00;
-    --secondary-color: #85ff8555;
+    --primary-color: #00fc00;
+    --secondary-color: #255025;
     --background-color: #000000;
-    --text-color: #00cc00;
-    --text-color-light: #00ff00;
-    --text-color-dark: #000000;
-}
+    --text-color: #00AA00;
+} 
 
 /* scrollbar */
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -18,4 +15,14 @@
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-color);
+}
+
+/* selection css */
+::selection {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+::-moz-selection {
+  background: var(--text-color);
+  color: var(--background-color);
 }

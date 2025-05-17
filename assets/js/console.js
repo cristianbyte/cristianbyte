@@ -6,7 +6,53 @@ function getFormattedTime() {
   return `[${hours}:${minutes}:${seconds}]`;
 }
 
-const consoleDiv = document.getElementById("console");
+async function getLocationData() {
+  const cacheKey = "location-data";
+  const cacheTimeKey = "location-data-timestamp";
+  const oneHour = 1000 * 60 * 60;
+
+  const cachedData = localStorage.getItem(cacheKey);
+  const cachedTime = localStorage.getItem(cacheTimeKey);
+
+  const now = Date.now();
+
+  if (cachedData && cachedTime && now - cachedTime < oneHour) {
+    return JSON.parse(cachedData);
+  }
+
+  try {
+    const response = await fetch("https://ipapi.co/json/");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+
+    localStorage.setItem(cacheKey, JSON.stringify(data));
+    localStorage.setItem(cacheTimeKey, now.toString());
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching location data:", error.message);
+    if (cachedData) return JSON.parse(cachedData);
+  }
+}
+
+const consoleDiv = document.getElementById("console-log");
+const locationDiv = document.getElementById("location");
+
+locationDiv.addEventListener("click", () => {
+  window.playSound("select");
+  console.log("Location data clicked");
+  toggleSound();
+});
+
+setTimeout(()=>{
+  //clean animations
+  const console = document.getElementById("console");
+  console.style.display = "none";
+}, 4000);
+
 const os = navigator.userAgentData.platform.toLowerCase();
 const logs = [
   "[coder.red boot sequence initialized...]",
@@ -34,24 +80,37 @@ const logs = [
   "Connecting to payment gateway...",
   "Finalizing startup sequence...",
   "Diagnostics complete. No issues found.",
-  "Terminal ready. Awaiting input..."
+  "Terminal ready. Awaiting input...",
 ];
 
-let i = 0;
 const min = 10;
-const max = 500;
+const max = 200;
 
-function printNextLog() {
-  if (i < logs.length) {
-    const line = document.createElement("p");
-    line.textContent = "coder.red" + ' : ' + logs[i];
-    consoleDiv.appendChild(line);
-    consoleDiv.scrollTop = consoleDiv.scrollHeight;
-    i++;
-    
-    const randomDelay = min + Math.floor(Math.random() * (max - min + 1));
-    
-    setTimeout(printNextLog, randomDelay);
-  }
+function getRandomDelay() {
+  return min + Math.floor(Math.random() * (max - min + 1));
 }
-printNextLog();
+
+function printLogs(logs, container, prefix = "", index = 0) {
+  if (index >= logs.length) return;
+
+  const p = document.createElement("p");
+  p.textContent = prefix ? `${prefix} : ${logs[index]}` : logs[index];
+  container.appendChild(p);
+  container.scrollTop = container.scrollHeight;
+
+  setTimeout(() => printLogs(logs, container, prefix, index + 1), getRandomDelay());
+}
+
+async function displayLocationData() {
+  const data = await getLocationData();
+  if (!data) return;
+
+  locationDiv.textContent = "";
+
+  const entries = Object.entries(data).map(([key, value]) => `${key}: ${value}`);
+  printLogs(entries, locationDiv);
+}
+
+// Ejecutar
+printLogs(logs, consoleDiv, "coder.red");
+displayLocationData();

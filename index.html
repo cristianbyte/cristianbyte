@@ -3,34 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cristianbyte — Java Backend Developer</title>
+    <title>coder.red - cristianbyte</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/icons/code-block.svg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/console.css" />
-    <link rel="stylesheet" href="assets/css/window.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
   </head>
   <body>
-    <div class="terminal-window">
+    <div class="home">
       <h1 data-i18n="title">Welcome to my portfolio</h1>
       <p data-i18n="description">
         I am a backend developer passionate about Java, Spring Boot, and more.
       </p>
+      
       <button onclick="setLang('es')">Español</button>
       <button onclick="setLang('en')">English</button>
 
-      <div class="console">
-        
-        <div class="window">
-          <div id="console" class="console-log"></div>
-        </div>
-      </div>
+      <p>
+        [This site is still under construction, but you can check out my GitHub and LinkedIn profiles for more information.]
+      </p>
+      <a href="https://github.com/cristianbyte" target="_blank" rel="noopener noreferrer">Github</a>
+      <a href="https://linkedin.com/in/cristianbyte" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
       <footer class="section footer">
         <p>> © 2025 cristianbyte. All rights reserved.</p>
       </footer>
-
-      <script src="./assets/js/i18n.js" ></script>
-      <script src="./assets/js/console.js"></script>
     </div>
+    
+    <div class="console" id="console">
+      <div class="access">access granted</div>
+      <div class="window location">
+        <div id="location" class="console-location"></div>
+      </div>
+      <div class="window logs">
+        <div id="console-log" class="console-log"></div>
+      </div>
+      <div class="loader"></div>
+    </div>
+    
+    <script src="./assets/js/i18n.js"></script>
+    <script src="./assets/js/console.js"></script>
+    <script src="./assets/js/sound.js"></script>
   </body>
 </html>
