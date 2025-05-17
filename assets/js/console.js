@@ -5,6 +5,7 @@ function getFormattedTime() {
   const seconds = String(now.getSeconds()).padStart(2, "0");
   return `[${hours}:${minutes}:${seconds}]`;
 }
+
 async function getLocationData() {
   const cacheKey = "location-data";
   const cacheTimeKey = "location-data-timestamp";
