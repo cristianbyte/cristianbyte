@@ -37,7 +37,7 @@ async function getLocationData() {
   }
 }
 
-const consoleDiv = document.getElementById("console");
+const consoleDiv = document.getElementById("console-log");
 const locationDiv = document.getElementById("location");
 
 locationDiv.addEventListener("click", () => {
@@ -45,6 +45,12 @@ locationDiv.addEventListener("click", () => {
   console.log("Location data clicked");
   toggleSound();
 });
+
+setTimeout(()=>{
+  //clean animations
+  const console = document.getElementById("console");
+  console.style.display = "none";
+}, 4000);
 
 const os = navigator.userAgentData.platform.toLowerCase();
 const logs = [
