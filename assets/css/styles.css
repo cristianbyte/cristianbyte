@@ -18,6 +18,10 @@ body {
   width: 100dvw;
 }
 
+svg{
+  fill: var(--text-color);
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -43,4 +47,20 @@ body {
 ::placeholder {
   color: var(--text-color);
   opacity: 0.5;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  background: var(--background-color);
+  font-family: "Space Mono", monospace;
+  -webkit-text-fill-color: var(--text-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

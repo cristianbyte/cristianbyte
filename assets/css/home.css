@@ -1,60 +1,100 @@
-.home{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100dvh;
-    width: 100dvw;
-    padding: 0 1rem;
-    max-width: 64rem;
-    background-color: var(--background-color);
-    color: var(--text-color);
+.home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100dvh;
+  width: 100dvw;
+  padding: 0 1rem;
+  max-width: 64rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-.header{
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10%;
+  align-items: center;
+  height: min(80px, 10dvh);
+  width: 100%;
+
+  .header__logo {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    height: min(80px, 10dvh);
-    width: 100%;
+    width: max-content;
+    height: min-content;
+    gap: 1rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
 
-    .header__logo{
-        display: flex;
-        align-items: center;
-        width: max-content;
-        height: 100%;
-        gap: 1rem;
-    }
-    h1{
-        font-size: 1.2rem;
-    }
-    img{
-        width: 2rem;
-        height: 2rem;
-    }
-    .header__search{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
+.input-wrap {
+  position: relative;
+  width: 100%;
+  font-size: 1.3rem;
+}
 
-    .header__search input{
-        width: 80%;
-        height: 1.2rem;
-        font-size: 1.2rem;
-        border-bottom: 2px solid transparent;
-        color: var(--text-color);
-    }
+#input {
+  font: inherit;
+  border-bottom: 2px solid var(--primary-color);
+  color: var(--text-color);
+  padding: 4px;
+  caret-color: transparent;
+  width: 100%;
+  font-size: 1.3rem;
+}
 
-    input:focus{
-        outline: none !important;
-        border-bottom: 2px solid transparent;
-        box-shadow: 0 2px 0 0 var(--primary-color);
-    }
+.input-wrap:focus-within #caret {
+  animation: blink 1s linear infinite forwards;
+  background-color: var(--primary-color);
+}
+
+.input-wrap:not(:focus-within) #caret {
+  animation: none !important;
+  background-color: transparent;
+}
+
+#mirror {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  visibility: hidden;
+  padding: 4px;
+  font: inherit;
+  pointer-events: none;
+}
+
+#caret {
+  position: absolute;
+  width: 1ch;
+  height: 1.5rem;
+  mix-blend-mode: difference;
+  background-color: transparent;
+  animation: none;
+  pointer-events: none;
+}
+
+@keyframes blink {
+  0%,100% {
+    background-color: var(--primary-color);
+  }
+  50%{
+    background-color: transparent;
+  }
 }
 
 @media (orientation: portrait) {
-    .header{
-        padding: 0 1rem;
+  .header {
+    padding: 0 1rem;
+    h1 {
+      display: none;
     }
+  }
 }

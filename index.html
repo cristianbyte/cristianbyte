@@ -26,15 +26,23 @@
           <img src="./assets/icons/code-block.svg" alt="Logo" />
           <h1>coder.red</h1>
         </a>
-        <div class="header__search">
-          <input
-            type="text"
-            id="search"
-            placeholder="search..."
-            onkeyup="searchFunction()"
-          />
+
+        <!-- <input
+          type="text"
+          id="terminal-input"
+          autocomplete="off"
+          class="header__search"
+        /> -->
+
+        <div class="input-wrap">
+          <input type="text" id="input" autocomplete="off" />
+          <div id="mirror"></div>
+          <div id="caret"></div>
         </div>
-        <button id="lang-toggle" onclick="toggleLang()">ES</button>
+
+        <div class="header__filters">
+          <button id="lang-toggle" onclick="toggleLang()">ES</button>
+        </div>
       </div>
       <p>---</p>
       <h1 data-i18n="title">Welcome to my portfolio</h1>
@@ -78,5 +86,6 @@
     <script src="./assets/js/i18n.js"></script>
     <script src="./assets/js/console.js"></script>
     <script src="./assets/js/sound.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
