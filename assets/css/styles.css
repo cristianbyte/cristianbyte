@@ -39,3 +39,8 @@ body {
   background: var(--text-color);
   color: var(--background-color);
 }
+
+::placeholder {
+  color: var(--text-color);
+  opacity: 0.5;
+}

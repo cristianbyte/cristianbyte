@@ -59,7 +59,6 @@ input[type="text"]{
 :focus{
 	outline: 2px solid var(--primary-color);
 	animation: glich .8s steps(2) infinite;
-	color: var(--primary-color);
 }
 
 @keyframes glich {

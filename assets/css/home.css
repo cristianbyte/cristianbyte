@@ -16,7 +16,6 @@
     justify-content: space-between;
     align-items: center;
     height: min(80px, 10dvh);
-
     width: 100%;
 
     .header__logo{
@@ -26,16 +25,31 @@
         height: 100%;
         gap: 1rem;
     }
-    
     h1{
-        font-family: 'space mono', monospace;
         font-size: 1.2rem;
-        font-weight: 500;
     }
-
     img{
         width: 2rem;
         height: 2rem;
+    }
+    .header__search{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .header__search input{
+        width: 80%;
+        height: 1.2rem;
+        font-size: 1.2rem;
+        border-bottom: 2px solid transparent;
+        color: var(--text-color);
+    }
+
+    input:focus{
+        outline: none !important;
+        border-bottom: 2px solid transparent;
+        box-shadow: 0 2px 0 0 var(--primary-color);
     }
 }
 
