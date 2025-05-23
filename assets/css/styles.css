@@ -1,20 +1,33 @@
-:root{
-    --primary-color: #00fc00;
-    --secondary-color: #255025;
-    --background-color: #000000;
-    --text-color: #00AA00;
-} 
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #007070;
+  --background-color: #000020;
+  --text-color: #50ffff;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-family: "Space Mono", monospace;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100dvh;
+  width: 100dvw;
+}
 
 /* scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
+  background: var(--secondary-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary-color);
+  background: var(--primary-color);
 }
 
 /* selection css */

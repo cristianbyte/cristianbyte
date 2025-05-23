@@ -16,25 +16,56 @@
   </head>
   <body>
     <div class="home">
+      <div class="header">
+        <a
+          class="header__logo"
+          href="./"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="./assets/icons/code-block.svg" alt="Logo" />
+          <h1>coder.red</h1>
+        </a>
+        <div class="header__search">
+          <input
+            type="text"
+            id="search"
+            placeholder="search..."
+            onkeyup="searchFunction()"
+          />
+        </div>
+      </div>
+      <p>---</p>
       <h1 data-i18n="title">Welcome to my portfolio</h1>
       <p data-i18n="description">
         I am a backend developer passionate about Java, Spring Boot, and more.
       </p>
-      
+
       <button onclick="setLang('es')">Español</button>
       <button onclick="setLang('en')">English</button>
 
       <p>
-        [This site is still under construction, but you can check out my GitHub and LinkedIn profiles for more information.]
+        [This site is still under construction, but you can check out my GitHub
+        and LinkedIn profiles for more information.]
       </p>
-      <a href="https://github.com/cristianbyte" target="_blank" rel="noopener noreferrer">Github</a>
-      <a href="https://linkedin.com/in/cristianbyte" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a
+        href="https://github.com/cristianbyte"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Github</a
+      >
+      <a
+        href="https://linkedin.com/in/cristianbyte"
+        target="_blank"
+        rel="noopener noreferrer"
+        >LinkedIn</a
+      >
 
       <footer class="section footer">
         <p>> © 2025 cristianbyte. All rights reserved.</p>
       </footer>
     </div>
-    
+
     <div class="console" id="console">
       <div class="access">access granted</div>
       <div class="window location">
@@ -45,7 +76,7 @@
       </div>
       <div class="loader"></div>
     </div>
-    
+
     <script src="./assets/js/i18n.js"></script>
     <script src="./assets/js/console.js"></script>
     <script src="./assets/js/sound.js"></script>

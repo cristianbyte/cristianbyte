@@ -113,7 +113,7 @@ async function displayLocationData() {
 const firstVisualization = localStorage.getItem("first-visualization");
 
 if (firstVisualization === null) {
-  localStorage.setItem("first-visualization", "true"); // Cambiar a 'true' después de la primera visualización
+  localStorage.setItem("first-visualization", "true");
   printLogs(logs, consoleDiv, "coder.red");
   displayLocationData();
 } else {

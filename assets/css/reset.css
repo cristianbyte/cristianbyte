@@ -46,3 +46,27 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
+input[type="text"]{
+	background-color: transparent;
+	border: none;
+	border-radius: none;
+	
+}
+:focus{
+	outline: 2px solid var(--primary-color);
+	animation: glich .8s steps(2) infinite;
+	color: var(--primary-color);
+}
+
+@keyframes glich {
+	0%{
+		outline: 2px solid var(--primary-color);
+	}
+	100%{
+		outline: 2px solid transparent;
+	}
+}
