@@ -3,6 +3,7 @@
   --secondary-color: #007070;
   --background-color: #000020;
   --text-color: #50ffff;
+  --button-clip: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
 }
 
 body {
@@ -18,7 +19,7 @@ body {
   width: 100dvw;
 }
 
-svg{
+svg {
   fill: var(--text-color);
 }
 
@@ -49,7 +50,7 @@ svg{
   opacity: 0.5;
 }
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -63,4 +64,30 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Buttons */
+
+.button {
+  background-color: var(--primary-color);
+  clip-path: var(--button-clip);
+  color: var(--background-color);
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0.1rem .5rem;
+
+}
+
+.min-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (orientation: portrait) {
+  .min-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 }
