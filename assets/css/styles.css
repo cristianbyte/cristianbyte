@@ -63,21 +63,24 @@ select:-webkit-autofill:focus {
   font-family: "Space Mono", monospace;
   -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--background-color) inset;
-  transition: background-color 5000s ease-in-out 0s;
 }
 
 /* Buttons */
 
 .button {
   background-color: var(--primary-color);
-  clip-path: var(--button-clip);
   color: var(--background-color);
   font-family: "Space Mono", monospace;
   font-size: 1rem;
   font-weight: 800;
+  border: none;
   cursor: pointer;
-  padding: 0.1rem .5rem;
+  padding: 0 .5rem;
+  border: 3px solid var(--background-color);
+}
 
+button:focus {
+  outline: 2px solid var(--primary-color);
 }
 
 .min-icon {
