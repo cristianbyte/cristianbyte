@@ -1,45 +1,57 @@
-// caret:
-const input = document.getElementById('input');
-const mirror = document.getElementById('mirror');
-const caret = document.getElementById('caret');
+const postsDiv = document.getElementById('posts');
 
-function updateCaret() {
-  const value = input.value;
-  const caretPos = input.selectionStart;
+const fetchUrl = async (url) => {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching posts:', error.message);
+    return [];
+  }
+};
 
-  mirror.textContent = value.slice(0, caretPos);
+const sortPostsByDateDesc = (posts) => {
+  return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+};
 
-  const span = document.createElement('span');
-  span.textContent = '\u200B'; // invisible
-  mirror.appendChild(span);
+const getLatestPosts = (posts, count = 5) => {
+  return posts.slice(0, count);
+};
 
-  const rect = span.getBoundingClientRect();
-  const inputRect = input.getBoundingClientRect();
+const getPosts = async () => {
+  const allPosts = await fetchUrl('blog/post/posts.json');
+  const sortedPosts = sortPostsByDateDesc(allPosts);
+  return getLatestPosts(sortedPosts, 5);
+};
 
-  caret.style.left = (rect.left - inputRect.left) + 'px';
-  caret.style.top = (rect.top - inputRect.top ) + 'px';
+function createPostElement(post) {
+    const postDiv = document.createElement('div');
+    postDiv.className = 'post';
+    
+    const title = document.createElement('h2');
+    title.textContent = post.title;
+    postDiv.appendChild(title);
+    
+    const content = document.createElement('p');
+    content.textContent = post.content;
+    postDiv.appendChild(content);
+    
+    const date = document.createElement('span');
+    date.className = 'date';
+    date.textContent = new Date(post.date).toLocaleDateString();
+    postDiv.appendChild(date);
+    
+    return postDiv;
 }
 
-input.addEventListener('input', updateCaret);
-input.addEventListener('click', updateCaret);
-input.addEventListener('keyup', updateCaret);
-input.addEventListener('keydown', updateCaret);
+const loadPosts = async () => {
+  const posts = await getPosts();
+  posts.forEach(post => {
+    postsDiv.appendChild(createPostElement(post));
+  });
+};
 
-updateCaret();
-
-let blinkTimeout;
-
-function stopCaretBlink() {
-  caret.style.animation = 'none';
-  clearTimeout(blinkTimeout);
-
-  blinkTimeout = setTimeout(() => {
-    caret.style.animation = 'blink 1s step-start infinite';
-  }, 500);
-}
-
-input.addEventListener('keydown', stopCaretBlink);
-input.addEventListener('click', stopCaretBlink);
-input.addEventListener('input', stopCaretBlink);
-
-//
+loadPosts();
