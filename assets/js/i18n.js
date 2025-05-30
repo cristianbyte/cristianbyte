@@ -1,19 +1,23 @@
+let lang = localStorage.getItem('lang') || 'es';
+
 function setLang(lang) {
-  // Cargar el archivo de idioma
   fetch(`lang/${lang}.json`)
     .then(res => res.json())
     .then(data => {
-      // Reemplazar el texto en todos los elementos con data-i18n
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         el.textContent = data[key] || el.textContent;
       });
 
-      // Guardar la preferencia del idioma en localStorage (opcional)
+      document.documentElement.setAttribute('lang', lang);
+      document.getElementById('lang-toggle').textContent = lang.toUpperCase();
       localStorage.setItem('lang', lang);
     });
 }
 
-// Cargar el idioma por defecto o el guardado en localStorage
-const savedLang = localStorage.getItem('lang') || 'en';
-setLang(savedLang);
+function toggleLang() {
+  lang = lang === 'es' ? 'en' : 'es';
+  setLang(lang);
+}
+
+setLang(lang);

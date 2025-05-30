@@ -38,6 +38,7 @@ async function getLocationData() {
   }
 }
 
+const console0 = document.getElementById("console");
 const consoleDiv = document.getElementById("console-log");
 const locationDiv = document.getElementById("location");
 
@@ -48,9 +49,7 @@ locationDiv.addEventListener("click", () => {
 });
 
 setTimeout(()=>{
-  //clean animations
-  const console = document.getElementById("console");
-  console.style.display = "none";
+  console0.style.display = "none";
 }, 4000);
 
 const os = navigator.userAgentData.platform.toLowerCase();
@@ -111,6 +110,13 @@ async function displayLocationData() {
   printLogs(entries, locationDiv);
 }
 
-// Ejecutar
-printLogs(logs, consoleDiv, "coder.red");
-displayLocationData();
+const firstVisualization = localStorage.getItem("first-visualization");
+
+if (firstVisualization === null) {
+  localStorage.setItem("first-visualization", "true");
+  printLogs(logs, consoleDiv, "coder.red");
+  displayLocationData();
+} else {
+  console0.classList.add("display-none");
+}
+
