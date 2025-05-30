@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNG to SVG Pixel Art Converter</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        body {
+            font-family: monospace;
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--primary-color);
+            letter-spacing: 2px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            color: var(--primary-color);
+        }
+
+        .upload-section {
+            margin-bottom: 3rem;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .file-input {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .file-label {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .file-label:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+
+        .status {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success {
+            color: var(--primary-color);
+            text-shadow: 0 0 5px var(--primary-color);
+        }
+
+        .error {
+            color: #ff4400;
+            text-shadow: 0 0 5px #ff4400;
+        }
+
+        .stats {
+            background-color: var(--background-color);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            margin-top: 2rem;
+            text-align: left;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .stats h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding-top: 3rem;
+            text-align: center;
+            border-top: 1px solid var(--primary-color);
+            width: 100%;
+        }
+
+        .credits {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .credits strong {
+            color: var(--primary-color);
+        }
+
+        .loader {
+            display: none;
+            margin: 20px auto;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #003300;
+            border-top: 3px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PNG → SVG<span class="blink">_</span></h1>
+        
+        <div class="description">
+            Convierte imágenes PNG en blanco y negro a vectores SVG optimizados.<br>
+            El resultado es un archivo SVG escalable con paths optimizados en lugar de píxeles individuales.
+        </div>
+
+        <div class="upload-section">
+            <div class="file-input-wrapper">
+                <input type="file" id="fileInput" class="file-input" accept=".png">
+                <label for="fileInput" class="file-label">Seleccionar PNG</label>
+            </div>
+            
+            <div class="loader" id="loader"></div>
+            <div class="status" id="status"></div>
+            
+            <div class="stats" id="stats">
+                <h3>/// ESTADÍSTICAS DE CONVERSIÓN ///</h3>
+                <div class="stats-grid" id="statsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="credits">
+            <strong>Desarrollado por Claude Sonnet 4 (Anthropic)</strong><br>
+            Script de conversión PNG a SVG con optimización de paths<br>
+            Algoritmo de agrupación de rectángulos para máxima eficiencia
+        </div>
+    </div>
+
+    <script>
+        // Código del conversor (misma implementación anterior)
+        class ImageLoader {
+            constructor() {
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+            }
+
+            async loadImage(file) {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        this.canvas.width = img.width;
+                        this.canvas.height = img.height;
+                        this.ctx.drawImage(img, 0, 0);
+                        resolve(img);
+                    };
+                    img.onerror = reject;
+                    img.src = URL.createObjectURL(file);
+                });
+            }
+
+            getImageData() {
+                return this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
+            }
+        }
+
+        class ImageProcessor {
+            constructor() {
+                this.matrix = [];
+                this.width = 0;
+                this.height = 0;
+            }
+
+            processImageData(imageData) {
+                const { data, width, height } = imageData;
+                this.width = width;
+                this.height = height;
+                this.matrix = [];
+
+                for (let y = 0; y < height; y++) {
+                    this.matrix[y] = [];
+                    for (let x = 0; x < width; x++) {
+                        const index = (y * width + x) * 4;
+                        const r = data[index];
+                        const g = data[index + 1];
+                        const b = data[index + 2];
+                        
+                        const isBlack = !(r > 200 && g > 200 && b > 200);
+                        this.matrix[y][x] = isBlack ? 1 : 0;
+                    }
+                }
+
+                return {
+                    matrix: this.matrix,
+                    width: this.width,
+                    height: this.height
+                };
+            }
+        }
+
+        class MatrixOptimizer {
+            constructor() {
+                this.rectangles = [];
+            }
+
+            optimizeMatrix(matrix, width, height) {
+                const visited = Array(height).fill().map(() => Array(width).fill(false));
+                this.rectangles = [];
+
+                for (let y = 0; y < height; y++) {
+                    for (let x = 0; x < width; x++) {
+                        if (matrix[y][x] === 1 && !visited[y][x]) {
+                            const rect = this.findLargestRectangle(matrix, visited, x, y, width, height);
+                            if (rect) {
+                                this.rectangles.push(rect);
+                            }
+                        }
+                    }
+                }
+
+                return this.rectangles;
+            }
+
+            findLargestRectangle(matrix, visited, startX, startY, width, height) {
+                let rectWidth = 0;
+                let rectHeight = 1;
+
+                for (let x = startX; x < width && matrix[startY][x] === 1 && !visited[startY][x]; x++) {
+                    rectWidth++;
+                }
+
+                for (let y = startY + 1; y < height; y++) {
+                    let canExtend = true;
+                    for (let x = startX; x < startX + rectWidth; x++) {
+                        if (matrix[y][x] !== 1 || visited[y][x]) {
+                            canExtend = false;
+                            break;
+                        }
+                    }
+                    if (canExtend) {
+                        rectHeight++;
+                    } else {
+                        break;
+                    }
+                }
+
+                for (let y = startY; y < startY + rectHeight; y++) {
+                    for (let x = startX; x < startX + rectWidth; x++) {
+                        visited[y][x] = true;
+                    }
+                }
+
+                return {
+                    x: startX,
+                    y: startY,
+                    width: rectWidth,
+                    height: rectHeight
+                };
+            }
+        }
+
+        class SVGGenerator {
+            generateOptimizedSVG(rectangles, canvasWidth, canvasHeight) {
+                const pathCommands = [];
+
+                rectangles.forEach(rect => {
+                    const commands = [
+                        `M${rect.x},${rect.y}`,
+                        `h${rect.width}`,
+                        `v${rect.height}`,
+                        `h${-rect.width}`,
+                        'z'
+                    ];
+                    pathCommands.push(commands.join(''));
+                });
+
+                const pathData = pathCommands.join(' ');
+                
+                return `<svg width="${canvasWidth}" height="${canvasHeight}" viewBox="0 0 ${canvasWidth} ${canvasHeight}" xmlns="http://www.w3.org/2000/svg">
+  <path d="${pathData}" fill="black" fill-rule="evenodd"/>
+</svg>`;
+            }
+        }
+
+        class PixelArtConverter {
+            constructor() {
+                this.imageLoader = new ImageLoader();
+                this.imageProcessor = new ImageProcessor();
+                this.matrixOptimizer = new MatrixOptimizer();
+                this.svgGenerator = new SVGGenerator();
+            }
+
+            async convertToSVG(pngFile) {
+                try {
+                    const img = await this.imageLoader.loadImage(pngFile);
+                    const imageData = this.imageLoader.getImageData();
+                    const { matrix, width, height } = this.imageProcessor.processImageData(imageData);
+                    const rectangles = this.matrixOptimizer.optimizeMatrix(matrix, width, height);
+                    const svgContent = this.svgGenerator.generateOptimizedSVG(rectangles, width, height);
+                    
+                    return {
+                        svg: svgContent,
+                        stats: {
+                            originalPixels: width * height,
+                            blackPixels: rectangles.reduce((sum, rect) => sum + (rect.width * rect.height), 0),
+                            rectangles: rectangles.length,
+                            dimensions: `${width}x${height}`,
+                            compressionRatio: ((1 - rectangles.length / (width * height)) * 100).toFixed(2)
+                        }
+                    };
+                    
+                } catch (error) {
+                    throw new Error(`Error converting image: ${error.message}`);
+                }
+            }
+
+            downloadSVG(svgContent, filename = 'pixelart.svg') {
+                const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        // Inicialización de la aplicación
+        const converter = new PixelArtConverter();
+        const fileInput = document.getElementById('fileInput');
+        const status = document.getElementById('status');
+        const loader = document.getElementById('loader');
+        const stats = document.getElementById('stats');
+        const statsContent = document.getElementById('statsContent');
+
+        fileInput.addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            
+            if (!file) return;
+            
+            if (file.type !== 'image/png') {
+                showStatus('Error: Solo se aceptan archivos PNG', 'error');
+                return;
+            }
+
+            try {
+                showLoading(true);
+                showStatus('Procesando imagen...', 'success');
+                
+                const result = await converter.convertToSVG(file);
+                
+                showLoading(false);
+                showStatus('¡Conversión exitosa! Descargando SVG...', 'success');
+                
+                // Mostrar estadísticas
+                showStats(result.stats);
+                
+                // Descargar automáticamente
+                const filename = file.name.replace('.png', '.svg');
+                converter.downloadSVG(result.svg, filename);
+                
+            } catch (error) {
+                showLoading(false);
+                showStatus(`Error: ${error.message}`, 'error');
+                console.error('Error:', error);
+            }
+        });
+
+        function showStatus(message, type) {
+            status.textContent = message;
+            status.className = `status ${type}`;
+        }
+
+        function showLoading(show) {
+            loader.style.display = show ? 'block' : 'none';
+        }
+
+        function showStats(statsData) {
+            statsContent.innerHTML = `
+                <div>Dimensiones: ${statsData.dimensions}</div>
+                <div>Píxeles totales: ${statsData.originalPixels.toLocaleString()}</div>
+                <div>Píxeles negros: ${statsData.blackPixels.toLocaleString()}</div>
+                <div>Rectángulos generados: ${statsData.rectangles}</div>
+                <div>Optimización: ${statsData.compressionRatio}%</div>
+                <div>Formato salida: SVG vectorial</div>
+            `;
+            stats.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
