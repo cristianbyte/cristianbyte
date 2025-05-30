@@ -1,4 +1,16 @@
 {
   "title": "Welcome to my portfolio",
-  "description": "I am a backend developer passionate about Java, Spring Boot, and more."
+  "description": "I am a backend developer passionate about Java, Spring Boot, and more.",
+  "navigation": "navigation",
+  "home": "Home",
+  "about": "About Me",
+  "projects": "Projects",
+  "blog": "Blog",
+  "contact": "Contact",
+  "links": "Links",
+  "portfolio": "Portfolio",
+  "footer": "© 2025 Cristianbyte. All rights reserved.",
+  "blogPosts": "Blog Posts",
+  "theme": "Theme",
+  "categories": "Categories"
 }

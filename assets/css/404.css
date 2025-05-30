@@ -1,5 +1,5 @@
 body {
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
   display: flex;
@@ -80,7 +80,7 @@ body {
 }
 
 .terminal-output {
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 1.5rem;
@@ -126,7 +126,7 @@ body {
 
 .home-link:hover {
   background-color: var(--primary-color);
-  color: var(--background-color);
+  color: var(--bg-color);
   box-shadow: 0 0 20px var(--primary-color);
 }
 
