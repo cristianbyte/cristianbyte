@@ -28,7 +28,8 @@ const getPosts = async () => {
 };
 
 function createPostElement(post) {
-  const postDiv = document.createElement("div");
+
+  const postDiv = document.createElement("a");
   postDiv.className = "post";
 
   const title = document.createElement("h2");
@@ -43,6 +44,22 @@ function createPostElement(post) {
   date.className = "date";
   date.textContent = new Date(post.date).toLocaleDateString();
   postDiv.appendChild(date);
+
+  const image = document.createElement("img");
+  image.src = post.image || "assets/img/default-post.jpg"; // Default image if none provided
+  image.alt = post.title;
+  postDiv.appendChild(image);
+
+  postDiv.href = `blog/post/${post.slug}.html`;
+  postDiv.target = "_blank";
+  postDiv.rel = "noopener noreferrer";
+  postDiv.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.playSound("select");
+    window.location.href = postDiv.href; // Navigate to the post
+  });
+
+
 
   return postDiv;
 }
@@ -95,12 +112,12 @@ const revealEmail = () => {
   link.textContent = email;
 
   // Mostrar en un modal simple o alert
-  if (confirm("¿Abrir cliente de correo para contactar?")) {
+  if (confirm("Open email client to contact?")) {
     window.location.href = "mailto:" + email;
   } else {
-    // Copiar al portapapeles
+    // Copy to clipboard
     navigator.clipboard.writeText(email).then(() => {
-      alert("Email copiado al portapapeles: " + email);
+      alert("Email copied to clipboard: " + email);
     });
   }
 };

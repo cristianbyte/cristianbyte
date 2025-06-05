@@ -1,9 +1,8 @@
 :root {
-  --primary-color: #00ffff;
-  --secondary-color: #007070;
-  --bg-color: #000020;
-  --text-color: #50ffff;
-  --button-clip: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
+  --primary-color: #00FA9A;
+  --secondary-color: #00B000;
+  --bg-color: #00001C;
+  --text-color: #00fa9a;
 }
 
 [data-theme="java"] {
@@ -31,6 +30,8 @@ body {
   overflow-x: hidden;
   height: 100dvh;
   width: 100dvw;
+  cursor: url("../generic/cursor.cur"), default;
+  cursor: url("../generic/cursor.cur"), pointer;
 }
 
 svg {
