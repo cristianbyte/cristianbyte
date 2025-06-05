@@ -28,6 +28,7 @@
   }
   h1 {
     font-size: 1.2rem;
+    color: var(--primary-color);
   }
 }
 
@@ -104,7 +105,7 @@
 /* -- Footer styles */
 .footer {
   background-color: var(--bg-color);
-  border-top: 2px solid var(--primary-color);
+  border-top: 2px solid var(--secondary-color);
   padding:  20px 0 ;
   margin-top: 10vh;
   width: 100%;
@@ -123,7 +124,7 @@
 }
 
 .footer-section h3 {
-  color: var(--primary-color);
+  color: var(--text-color);
   font-size: 1.1em;
   margin-bottom: 15px;
   font-weight: 600;
@@ -137,14 +138,13 @@
   color: var(--text-color);
   text-decoration: none;
   transition: all .1s ease;
-  font-size: 0.95em;
+  font-size: 1rem;
   display: block;
 }
 
 .footer-section a:hover {
   color: var(--primary-color);
   padding-left: 5px;
-  outline: 2px solid var(--primary-color);
   outline-offset: -2px;
 }
 
@@ -163,11 +163,10 @@
 
 .theme-btn {
   background: none;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--secondary-color);
   color: var(--text-color);
   padding: 6px 12px;
   border-radius: 4px;
-  cursor: pointer;
   font-size: 0.85em;
   transition: all 0.3s ease;
 }
@@ -176,6 +175,9 @@
 .theme-btn.active {
   background-color: var(--primary-color);
   color: var(--bg-color);
+  animation: none;
+  outline: none;
+  border: none;
 }
 
 .contact-obfuscated {
@@ -184,11 +186,11 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--secondary-color);
+  border-top: 2px solid var(--secondary-color);
   padding-top: 20px;
   text-align: center;
-  font-size: 0.9em;
-  color: var(--secondary-color);
+  font-size: 1rem;
+  color: var(--text-color);
 }
 
 @media (max-width: 500px) {

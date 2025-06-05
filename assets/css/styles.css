@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #00FA9A;
-  --secondary-color: #00B000;
+  --primary-color: #00FFDD;
+  --secondary-color: #006d5d;
   --bg-color: #00001C;
-  --text-color: #00fa9a;
+  --text-color: #27AA89;
 }
 
 [data-theme="java"] {
@@ -16,7 +16,7 @@
   --primary-color: #00ff41;
   --secondary-color: #00cc33;
   --bg-color: #0a0a0a;
-  --text-color: #00ff41;
+  --text-color: #00A000;
 }
 
 body {
@@ -31,11 +31,14 @@ body {
   height: 100dvh;
   width: 100dvw;
   cursor: url("../generic/cursor.cur"), default;
-  cursor: url("../generic/cursor.cur"), pointer;
 }
 
-svg {
-  fill: var(--text-color);
+button, a{
+  cursor: url("../generic/pointer.cur"), pointer;
+}
+
+svg, path {
+  fill: var(--primary-color) !important;
 }
 
 /* scrollbar */
@@ -52,7 +55,7 @@ svg {
 
 /* selection css */
 ::selection {
-  background: var(--text-color);
+  background: var(--primary-color);
   color: var(--bg-color);
 }
 ::-moz-selection {
@@ -89,13 +92,14 @@ select:-webkit-autofill:focus {
   font-size: 1rem;
   font-weight: 800;
   border: none;
-  cursor: pointer;
   padding: 0 0.5rem;
   border: 3px solid var(--bg-color);
 }
 
-button:focus {
-  outline: 2px solid var(--primary-color);
+:focus {
+  outline: none;
+  animation: selected 0.2s linear;
+  transition: border 0.2s ease;
 }
 
 .min-icon {
@@ -107,5 +111,14 @@ button:focus {
   .min-icon {
     width: 1.2rem;
     height: 1.2rem;
+  }
+}
+
+@keyframes selected {
+  0%,30%,100% {
+    border: 2px solid var(--primary-color);
+  }
+  60% {
+    border: 2px solid var(--bg-color);
   }
 }

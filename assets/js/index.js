@@ -56,7 +56,9 @@ function createPostElement(post) {
   postDiv.addEventListener("click", (e) => {
     e.preventDefault();
     window.playSound("select");
-    window.location.href = postDiv.href; // Navigate to the post
+    setTimeout(()=>{
+      window.location.href = postDiv.href;
+    },400)
   });
 
 
