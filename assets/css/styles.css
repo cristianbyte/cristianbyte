@@ -1,8 +1,10 @@
 :root {
-  --primary-color: #00FFDD;
-  --secondary-color: #006d5d;
-  --bg-color: #00001C;
-  --text-color: #27AA89;
+  --primary-color: #00ffff;
+  --secondary-color: #007070;
+  --bg-color: #000020;
+  --text-color: #00c2c2;
+  --url-cursor: url("../generic/cursor.cur");
+  --url-pointer: url("../generic/pointer.cur");
 }
 
 [data-theme="java"] {
@@ -10,6 +12,8 @@
   --secondary-color: #5382a1;
   --bg-color: #ffffff;
   --text-color: #5382a1;
+  --url-cursor: url("../generic/cursor2.cur");
+  --url-pointer: url("../generic/pointer2.cur");
 }
 
 [data-theme="console"] {
@@ -17,6 +21,9 @@
   --secondary-color: #00cc33;
   --bg-color: #0a0a0a;
   --text-color: #00A000;
+  --url-cursor: url("../generic/cursor2.cur");
+  --url-pointer: url("../generic/pointer2.cur");
+
 }
 
 body {
@@ -30,11 +37,21 @@ body {
   overflow-x: hidden;
   height: 100dvh;
   width: 100dvw;
-  cursor: url("../generic/cursor.cur"), default;
+  cursor: var(--url-cursor), default;
 }
 
 button, a{
-  cursor: url("../generic/pointer.cur"), pointer;
+  cursor: var(--url-pointer), pointer;
+}
+
+button{
+  position: relative;
+  animation: none;
+  background: none;
+  border: none;
+  padding-left: 1rem;
+  color: var(--text-color);
+  font-size: 1rem;
 }
 
 svg, path {

@@ -8,6 +8,7 @@
   max-width: 720px;
   background-color: var(--bg-color);
   color: var(--text-color);
+  transition: all .3s ease;
 }
 
 .header {
@@ -161,23 +162,20 @@
   margin-bottom: 15px;
 }
 
-.theme-btn {
-  background: none;
-  border: 1px solid var(--secondary-color);
-  color: var(--text-color);
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 0.85em;
-  transition: all 0.3s ease;
-}
-
 .theme-btn:hover,
 .theme-btn.active {
-  background-color: var(--primary-color);
-  color: var(--bg-color);
+  color: var(--primary-color);
   animation: none;
   outline: none;
-  border: none;
+}
+
+.theme-btn.active::before,
+.theme-btn:hover::before {
+  position: absolute;
+  content: ">";
+  font-weight: 600;
+  left: 0;
+  color: var(--primary-color);
 }
 
 .contact-obfuscated {
