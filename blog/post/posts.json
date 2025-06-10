@@ -1,42 +1,16 @@
 [
   {
-    "title": "¿Qué es Java y por qué todos hablan de él?",
-    "desc": "Un repaso introductorio para quienes aún no han tocado una línea de código en Java.",
-    "img": "https://placehold.co/800x600/000/0f0",
-    "date": "2025-05-01",
-    "tags": ["java", "programación", "principiantes"],
-    "slug": "java-intro"
-  },
-  {
-    "title": "¿main? ¿public static void? ¿Qué significa eso?",
-    "desc": "Analizamos esa línea mágica que todo programa Java tiene y nadie explica del todo.",
-    "img": "https://placehold.co/800x600/000/0f0",
-    "date": "2025-05-03",
-    "tags": ["java", "main", "novato"],
-    "slug": "java-main-method"
-  },
-  {
-    "title": "Clases, objetos y otras palabras que asustan",
-    "desc": "Una visión simplificada de la POO en Java para no entrar en pánico.",
-    "img": "https://placehold.co/800x600/000/0f0",
-    "date": "2025-05-06",
-    "tags": ["java", "poo", "objetos"],
-    "slug": "java-poo-basics"
-  },
-  {
-    "title": "5 errores comunes que todo principiante en Java comete",
-    "desc": "Y cómo reírte de ellos cuando tú los cometas (porque sí, te van a pasar).",
-    "img": "https://placehold.co/800x600/000/0f0",
-    "date": "2025-05-10",
-    "tags": ["java", "errores", "debug"],
-    "slug": "errores-comunes-java"
-  },
-  {
-    "title": "System.out.println(\"Hola mundo\"); y otros rituales sagrados",
-    "desc": "Exploramos la mística detrás del primer programa de todos los tiempos.",
-    "img": "https://placehold.co/800x600/000/0f0",
-    "date": "2025-05-14",
-    "tags": ["java", "hola mundo", "principiantes"],
-    "slug": "hola-mundo-java"
+    "title": {
+      "es": "TecnologIA + ingenierIA: el nuevo camino.",
+      "en": "TechnologAI + EngineerAI: The New Path."
+    },
+    "desc": {
+      "es": "Cuando tu Youtuber favorito (Pewdiepie) empieza a crear/armar hardware, hay señal de que algo está cambiando.",
+      "en": "When your favorite YouTuber (Pewdiepie) starts building hardware, it's a sign that something is changing."
+    },
+    "image": "./assets/images/pewdiepie-tech.svg",
+    "date": "2025-06-10",
+    "tags": ["build", "hardware"],
+    "slug": "technologIA-engineerAI"
   }
 ]

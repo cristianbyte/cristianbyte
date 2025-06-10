@@ -1,15 +1,34 @@
 .home {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: start;
   flex-direction: column;
-  height: 100dvh;
   width: 100dvw;
+  height: 100dvh;
   padding: 0 1rem;
   max-width: 720px;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: all .3s ease;
 }
+
+.home::before, .home::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  background-image: linear-gradient(to right , transparent , var(--bg-color));
+  width: 20px;
+  height: 100%;
+}
+
+.home::after {
+  right: -20px;
+  left: auto;
+  background-image: linear-gradient(to left , transparent , var(--bg-color));
+}
+
+
 
 .header {
   display: flex;
@@ -35,6 +54,38 @@
 
 .posts{
   width: 100%;
+  overflow: hidden;
+
+  .post{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.posts svg *{
+  fill: var(--text-color);
+}
+
+.post .post__image{
+  height: 10vh;
+  aspect-ratio: 4/3;
+  width: auto;  
+  svg{
+    width: 100%;
+    height: 100%;    
+  }
+}
+
+.post .post__content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .post__title{
+    color: var(--primary-color);
+    font-weight: 600;
+  }
 }
 
 /* .input-wrap {
@@ -108,7 +159,7 @@
   background-color: var(--bg-color);
   border-top: 2px solid var(--secondary-color);
   padding:  20px 0 ;
-  margin-top: 10vh;
+  margin-top: auto;
   width: 100%;
 }
 

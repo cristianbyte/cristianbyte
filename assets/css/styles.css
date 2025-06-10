@@ -1,6 +1,6 @@
 :root {
   --primary-color: #00ffff;
-  --secondary-color: #007070;
+  --secondary-color: #003c3c;
   --bg-color: #000020;
   --text-color: #00c2c2;
   --url-cursor: url("../generic/cursor.cur");
@@ -18,26 +18,24 @@
 
 [data-theme="console"] {
   --primary-color: #00ff41;
-  --secondary-color: #00cc33;
+  --secondary-color: #004511;
   --bg-color: #0a0a0a;
-  --text-color: #00A000;
+  --text-color: #00b700;
   --url-cursor: url("../generic/cursor2.cur");
   --url-pointer: url("../generic/pointer2.cur");
 
 }
 
 body {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  font-family: "Space Mono", monospace;
   background-color: var(--bg-color);
   color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-y: scroll;
-  overflow-x: hidden;
-  height: 100dvh;
-  width: 100dvw;
-  cursor: var(--url-cursor), default;
+  position: relative;
 }
 
 button, a{
@@ -55,7 +53,7 @@ button{
 }
 
 svg, path {
-  fill: var(--primary-color) !important;
+  fill: var(--primary-color);
 }
 
 /* scrollbar */

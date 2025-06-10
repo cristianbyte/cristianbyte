@@ -13,6 +13,8 @@ function setLang(lang) {
       document.getElementById('lang-toggle').textContent = lang.toUpperCase();
       localStorage.setItem('lang', lang);
     });
+
+   window.loadPosts();
 }
 
 function toggleLang() {
