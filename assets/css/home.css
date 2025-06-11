@@ -59,8 +59,13 @@
   .post{
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     gap: 1rem;
   }
+}
+
+.posts:focus-within {
+  outline: 2px solid var(--primary-color);
 }
 
 .posts svg *{
@@ -70,7 +75,8 @@
 .post .post__image{
   height: 10vh;
   aspect-ratio: 4/3;
-  width: auto;  
+  width: auto;
+  object-position: bottom;  
   svg{
     width: 100%;
     height: 100%;    
@@ -82,9 +88,14 @@
   flex-direction: column;
   justify-content: center;
 
+
   .post__title{
     color: var(--primary-color);
     font-weight: 600;
+  }
+
+  .post__desc{
+    font-size: .9rem;
   }
 }
 
@@ -187,22 +198,21 @@
 }
 
 .footer-section a {
+  position: relative;
   color: var(--text-color);
   text-decoration: none;
-  transition: all .1s ease;
   font-size: 1rem;
   display: block;
 }
 
 .footer-section a:hover {
   color: var(--primary-color);
-  padding-left: 5px;
-  outline-offset: -2px;
 }
 
 .footer-section a:hover::before{
-  position: relative;
-  content: "> ";
+  position: absolute;
+  content: ">";
+  left: -15px;
   color: var(--primary-color);
 }
 

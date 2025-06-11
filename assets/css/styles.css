@@ -96,6 +96,21 @@ select:-webkit-autofill:focus {
   font-family: "Space Mono", monospace;
   -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset;
+  outline: 2px solid var(--primary-color);
+}
+
+:focus {
+  outline:none;
+}
+
+:focus::before{
+  content: ">";
+  position: absolute;
+  color: var(--primary-color);
+  font-weight: 900;
+  font-size: 1rem;
+  left: -1rem;
+  animation: selected .3s ease infinite;
 }
 
 /* Buttons */
@@ -109,12 +124,6 @@ select:-webkit-autofill:focus {
   border: none;
   padding: 0 0.5rem;
   border: 3px solid var(--bg-color);
-}
-
-:focus {
-  outline: none;
-  animation: selected 0.2s linear;
-  transition: border 0.2s ease;
 }
 
 .min-icon {
@@ -131,9 +140,9 @@ select:-webkit-autofill:focus {
 
 @keyframes selected {
   0%,30%,100% {
-    border: 2px solid var(--primary-color);
+    opacity: 1;
   }
   60% {
-    border: 2px solid var(--bg-color);
+    opacity: 0;
   }
 }

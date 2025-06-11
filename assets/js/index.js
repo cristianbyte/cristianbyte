@@ -52,12 +52,15 @@ async function createPostElement(post) {
   postContent.appendChild(title);
 
   const date = document.createElement("span");
-date.textContent = new Date(post.date + "T00:00:00").toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric'
-});
-postContent.appendChild(date);
+  date.textContent = new Date(post.date + "T00:00:00").toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  );
+  postContent.appendChild(date);
 
   const content = document.createElement("p");
   content.className = "post__desc";
@@ -76,14 +79,6 @@ postContent.appendChild(date);
   postDiv.href = `blog/post/${post.slug}.html`;
   postDiv.target = "_blank";
   postDiv.rel = "noopener noreferrer";
-  postDiv.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.playSound("select");
-    setTimeout(() => {
-      window.location.href = postDiv.href;
-    }, 400);
-  });
-
   return postDiv;
 }
 
