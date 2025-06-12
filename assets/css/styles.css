@@ -1,9 +1,11 @@
 :root {
   --primary-color: #00ffff;
-  --secondary-color: #007070;
+  --secondary-color: #003c3c;
   --bg-color: #000020;
-  --text-color: #50ffff;
-  --button-clip: polygon(0% 0%, 80% 0%, 100% 20%, 100% 100%, 20% 100%, 0% 80%);
+  --text-color: #00c2c2;
+  --url-cursor: url("../generic/cursor.cur");
+  --url-pointer: url("../generic/pointer.cur");
+  --hue-rotate: 180deg;
 }
 
 [data-theme="java"] {
@@ -11,30 +13,48 @@
   --secondary-color: #5382a1;
   --bg-color: #ffffff;
   --text-color: #5382a1;
+  --url-cursor: url("../generic/cursor2.cur");
+  --url-pointer: url("../generic/pointer2.cur");
+  --hue-rotate: 170deg;
 }
 
 [data-theme="console"] {
   --primary-color: #00ff41;
-  --secondary-color: #00cc33;
+  --secondary-color: #004511;
   --bg-color: #0a0a0a;
-  --text-color: #00ff41;
+  --text-color: #00b700;
+  --url-cursor: url("../generic/cursor2.cur");
+  --url-pointer: url("../generic/pointer2.cur");
+  --hue-rotate: 50deg;
 }
 
 body {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  font-family: "Space Mono", monospace;
   background-color: var(--bg-color);
   color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow-y: scroll;
-  overflow-x: hidden;
-  height: 100dvh;
-  width: 100dvw;
+  position: relative;
 }
 
-svg {
-  fill: var(--text-color);
+button, a{
+  cursor: var(--url-pointer), pointer;
+}
+
+button{
+  position: relative;
+  animation: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+svg, path {
+  fill: var(--primary-color);
 }
 
 /* scrollbar */
@@ -51,7 +71,7 @@ svg {
 
 /* selection css */
 ::selection {
-  background: var(--text-color);
+  background: var(--primary-color);
   color: var(--bg-color);
 }
 ::-moz-selection {
@@ -77,24 +97,33 @@ select:-webkit-autofill:focus {
   font-family: "Space Mono", monospace;
   -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset;
+  outline: 2px solid var(--primary-color);
+}
+
+:focus {
+  outline:none;
+}
+
+:focus::before{
+  content: "> ";
+  position: relative;
+  color: var(--primary-color);
+  font-family: "Space Mono", monospace;
+  font-weight: 900;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  animation: selected .3s ease infinite;
 }
 
 /* Buttons */
 
 .button {
-  background-color: var(--primary-color);
-  color: var(--bg-color);
+  color: var(--primary-color);
   font-family: "Space Mono", monospace;
   font-size: 1rem;
   font-weight: 800;
-  border: none;
-  cursor: pointer;
   padding: 0 0.5rem;
   border: 3px solid var(--bg-color);
-}
-
-button:focus {
-  outline: 2px solid var(--primary-color);
 }
 
 .min-icon {
@@ -106,5 +135,14 @@ button:focus {
   .min-icon {
     width: 1.2rem;
     height: 1.2rem;
+  }
+}
+
+@keyframes selected {
+  0%,30%,100% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
   }
 }

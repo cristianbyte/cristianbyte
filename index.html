@@ -15,30 +15,49 @@
     <link rel="stylesheet" href="assets/css/home.css" />
   </head>
   <body>
-    <div class="home">
-      <div class="header">
-        <a
-          class="header__logo"
-          href="./"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg class="min-icon" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24"><path fill="currentColor" d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 19V7h16l.002 12H4z"/><path fill="currentColor" d="M9.293 9.293L5.586 13l3.707 3.707l1.414-1.414L8.414 13l2.293-2.293zm5.414 0l-1.414 1.414L15.586 13l-2.293 2.293l1.414 1.414L18.414 13z"/></svg>
-          <h1>coder.red</h1>
-        </a>
+      <div class="header__container">
+        <div class="header">
+          <a
+            class="header__logo"
+            href="./"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              class="min-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 19V7h16l.002 12H4z"
+              />
+              <path
+                fill="currentColor"
+                d="M9.293 9.293L5.586 13l3.707 3.707l1.414-1.414L8.414 13l2.293-2.293zm5.414 0l-1.414 1.414L15.586 13l-2.293 2.293l1.414 1.414L18.414 13z"
+              />
+            </svg>
+            <h1>coder.red</h1>
+          </a>
 
-        <!-- <div class="input-wrap">
+          <!-- <div class="input-wrap">
           <input type="text" id="input" autocomplete="off" />
           <div id="mirror"></div>
           <div id="caret"></div>
         </div> -->
 
-        <div class="header__filters">
-          <button id="lang-toggle" class="button" onclick="toggleLang()">
-            EN
-          </button>
+          <div class="header__filters">
+            <button id="lang-toggle" class="lang-toggle" onclick="toggleLang()">
+              EN
+            </button>
+          </div>
         </div>
       </div>
+
+
+    <div class="home">
 
       <div class="posts" id="posts"></div>
 
@@ -50,7 +69,7 @@
               <h3 data-i18n="navigation">Navigation</h3>
               <ul>
                 <li><a href="/" data-i18n="home">Home</a></li>
-                <li><a href="/sobre-mi" data-i18n="about">About me</a></li>
+                <li><a href="/portfolio/index.html" data-i18n="about">About me</a></li>
               </ul>
             </div>
 
@@ -58,9 +77,9 @@
             <div class="footer-section">
               <h3 data-i18n="categories">Categories</h3>
               <ul>
-                <li><a href="/categoria/java">Java</a></li>
-                <li><a href="/categoria/programacion">Code</a></li>
-                <li><a href="/categoria/actualidad">Tech</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">Code</a></li>
+                <li><a href="#">Tech</a></li>
               </ul>
             </div>
 
@@ -69,7 +88,7 @@
               <h3 data-i18n="links">Enlaces</h3>
               <ul>
                 <li>
-                  <a href="/" data-i18n="portfolio" target="_blank"
+                  <a href="/portfolio/index.html" data-i18n="portfolio" target="_blank"
                     >Portafolio</a
                   >
                 </li>
@@ -90,11 +109,12 @@
                   >
                 </li>
                 <li>
-                  <span
+                  <a
                     class="contact-obfuscated"
                     onclick="revealEmail()"
                     data-i18n="contact"
-                    >Contacto</span
+                    href="#"
+                    >Contacto</a
                   >
                 </li>
               </ul>
@@ -109,24 +129,12 @@
                 >
                   Tech
                 </button>
-                <button
-                  class="theme-btn"
-                  onclick="setTheme('java', this)"
-                >
+                <button class="theme-btn" onclick="setTheme('java', this)">
                   Java
                 </button>
-                <button
-                  class="theme-btn"
-                  onclick="setTheme('console', this)"
-                >
+                <button class="theme-btn" onclick="setTheme('console', this)">
                   Console
                 </button>
-              </div>
-              <div class="footer-stats">
-                <div class="stat-item">
-                  <span class="stat-number">0</span>
-                  <span data-i18n="posts">Posts</span>
-                </div>
               </div>
             </div>
           </div>
@@ -151,9 +159,9 @@
       <div class="loader"></div>
     </div>
 
+    <script src="./assets/js/index.js"></script>
     <script src="./assets/js/i18n.js"></script>
     <script src="./assets/js/console.js"></script>
     <script src="./assets/js/sound.js"></script>
-    <script src="./assets/js/index.js"></script>
   </body>
 </html>

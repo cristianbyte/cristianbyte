@@ -1,0 +1,16 @@
+[
+  {
+    "title": {
+      "es": "Curiosidad + Creatividad: el nuevo camino.",
+      "en": "Curiosity + Creativity: The New Path."
+    },
+    "desc": {
+      "es": "No necesitas ser un experto para ser un gran ingeniero; La curiosidad y la creatividad son las unicas herramientas que necesitas.",
+      "en": "You don't need to be an expert to be a great engineer; Curiosity and creativity are the only tools you need."
+    },
+    "image": "./assets/images/pewdiepie-tech.png",
+    "date": "2025-06-10",
+    "tags": ["build", "hardware"],
+    "slug": "curiosity-creativity-new-path"
+  }
+]
