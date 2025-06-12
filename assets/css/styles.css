@@ -5,6 +5,7 @@
   --text-color: #00c2c2;
   --url-cursor: url("../generic/cursor.cur");
   --url-pointer: url("../generic/pointer.cur");
+  --hue-rotate: 180deg;
 }
 
 [data-theme="java"] {
@@ -14,6 +15,7 @@
   --text-color: #5382a1;
   --url-cursor: url("../generic/cursor2.cur");
   --url-pointer: url("../generic/pointer2.cur");
+  --hue-rotate: 170deg;
 }
 
 [data-theme="console"] {
@@ -23,7 +25,7 @@
   --text-color: #00b700;
   --url-cursor: url("../generic/cursor2.cur");
   --url-pointer: url("../generic/pointer2.cur");
-
+  --hue-rotate: 50deg;
 }
 
 body {
@@ -47,7 +49,6 @@ button{
   animation: none;
   background: none;
   border: none;
-  padding-left: 1rem;
   color: var(--text-color);
   font-size: 1rem;
 }
@@ -104,24 +105,23 @@ select:-webkit-autofill:focus {
 }
 
 :focus::before{
-  content: ">";
-  position: absolute;
+  content: "> ";
+  position: relative;
   color: var(--primary-color);
+  font-family: "Space Mono", monospace;
   font-weight: 900;
-  font-size: 1rem;
-  left: -1rem;
+  font-size: 1.2rem;
+  line-height: 1rem;
   animation: selected .3s ease infinite;
 }
 
 /* Buttons */
 
 .button {
-  background-color: var(--primary-color);
-  color: var(--bg-color);
+  color: var(--primary-color);
   font-family: "Space Mono", monospace;
   font-size: 1rem;
   font-weight: 800;
-  border: none;
   padding: 0 0.5rem;
   border: 3px solid var(--bg-color);
 }
