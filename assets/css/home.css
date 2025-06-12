@@ -68,6 +68,27 @@
   outline: 2px solid var(--primary-color);
 }
 
+.posts:hover{
+  animation: glitch 2s .4s step-end infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translateX(-2px);
+  }
+  1%{
+    clip-path: polygon(0 0, 50% 0, 50% 50%, 100% 50%,100% 100%,0% 100%);
+  }
+  3% {
+    clip-path: polygon(0 0, 100% 0%,100% 100%, 50% 100%, 20% 100%,20% 50%,0% 50%);
+  }
+  5% {
+    clip-path: none;
+    transform: translateX(0);
+  }
+  
+}
+
 .posts svg *{
   fill: var(--text-color);
 }

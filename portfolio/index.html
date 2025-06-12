@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cristianbyte - Backend Developer</title>
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">cristianbyte</div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">home</a></li>
+                <li><a href="#work">work</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi!, I'm Cristian.</h1>
+                <div class="subtitle">Backend Developer</div>
+                <div class="description">
+                    Cualquier sea tu problema, llevalo al codigo, el 99% tiene una solucion logica.
+                </div>
+                <a href="https://linkedin.com" class="btn" target="_blank">hire me</a>
+            </div>
+            <div class="hero-image">
+                [imagen placeholder]
+            </div>
+        </div>
+    </section>
+
+    <!-- My Work Section -->
+    <section class="section" id="work">
+        <div class="container">
+            <h2>my work</h2>
+            <div class="work-grid">
+                <div class="project-card">
+                    <div class="project-image">[proyecto imagen]</div>
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción del primer proyecto. Sistema backend desarrollado con tecnologías modernas.</p>
+                    <a href="#" class="btn">view project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">[proyecto imagen]</div>
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción del segundo proyecto. API REST con arquitectura escalable y segura.</p>
+                    <a href="#" class="btn">view project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2>skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Tecnologías</h3>
+                    <ul class="skill-list">
+                        <li>Java</li>
+                        <li>PostgreSQL</li>
+                        <li>JavaScript</li>
+                        <li>Docker</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Communication</li>
+                        <li>Critical Thinking</li>
+                        <li>Adaptability</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="https://github.com">github</a>
+                <span>•</span>
+                <a href="https://linkedin.com">linkedin</a>
+                <span>•</span>
+                <a href="mailto:contact@cristianbyte.com">email</a>
+            </nav>
+            <div class="copyright">
+                © 2025 cristianbyte. all rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Solo para el menú responsive
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Cerrar menú al hacer click en un enlace
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
