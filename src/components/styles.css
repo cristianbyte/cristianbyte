@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #00ffff;
-  --secondary-color: #003c3c;
-  --bg-color: #000020;
-  --text-color: #00c2c2;
+  --primary-color: #000000;
+  --secondary-color: #3b3b3b;
+  --bg-color: #ffffff;
+  --text-color: #000000;
   --url-cursor: url("../generic/cursor.cur");
   --url-pointer: url("../generic/pointer.cur");
   --hue-rotate: 180deg;
