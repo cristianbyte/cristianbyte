@@ -1,5 +1,6 @@
 ---
 import './styles.css'
+import './reset.css'
 ---
 
 <div class="container">
@@ -16,7 +17,7 @@ import './styles.css'
 </div>
 
 <style>
-	@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Share+Tech+Mono&display=swap");
+	@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Share+Tech+Mono&display=swap');
 	* {
 		margin: 0;
 		padding: 0;
@@ -51,7 +52,7 @@ import './styles.css'
 	
 	.photo-placeholder {
 		transform-style: preserve-3d;
-		perspective: 100px;
+		/* perspective: 100px; */
 		position: relative;
 		display: flex;
 		width: min(400px, 50vw);
@@ -60,26 +61,56 @@ import './styles.css'
 		justify-content: center;
 		color: #666;
 		font-size: 18px;
+		z-index: 0;
 		img {
+			transition: .4s  ease;
+			border: 4px solid var(--primary-color);
 			width: 100%;
 			height: 100%;
 			object-fit: contain;
-			border: 2px solid var(--primary-color);
+			background-color: var(--bg-color);
+			transform: translate(32px, 32px);
 		}
 	}
-
+	.photo-placeholder:hover img{
+		transform: translate(0px, 0px);
+	}
+	
+	.photo-placeholder:hover::before, .photo-placeholder:hover::after{
+		clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+	}
+	
 	.photo-placeholder::before{
+		transition: .4s ease;
 		position: absolute;
 		content: '';
-		width: 100%;
+		width: calc(100% - 8px);
 		height: 30px;
 		bottom: 0;
-		background-color: red;
-		transform: rotateX(-40deg) skewX(-100deg);
-		transform-origin: bottom right;
-
+		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+		transform: skewX(45deg) translate(1px, 32px);
+		border: 4px solid var(--primary-color);
+		border-top: none;
+		transform-origin: bottom;
+		z-index: -1;
 	}
-
+	
+	.photo-placeholder::after{
+		transition: .4s ease;
+		position: absolute;
+		content: '';
+		height: calc(100% - 6px);
+		width: 30px;
+		right: 0;
+		clip-path: polygon(100% 100%, 100% 100%, 100% 0, 100% 0);
+		transform: skewY(45deg) translate(32px, .5px);
+		border: 4px solid var(--primary-color);
+		border-left: none;
+		border-bottom: none;
+		transform-origin: right;
+		z-index: -1;
+	}
+	
 	.photo-workingOn{
 		position: relative;
 		transform: translateY(-30%);
@@ -118,9 +149,9 @@ import './styles.css'
 	}
 
 	.name {
-		font-family: "Cabin Sketch", sans-serif;
+		font-family: "Doto", sans-serif;
 		font-size: 4rem;
-		font-weight: 300;
+		font-weight: 900;
 		letter-spacing: -2px;
 		margin-bottom: 20px;
 		color: black;
