@@ -3,19 +3,10 @@
   --secondary-color: #3b3b3b;
   --bg-color: #ffffff;
   --text-color: #000000;
-  --url-cursor: url("../generic/cursor.cur");
-  --url-pointer: url("../generic/pointer.cur");
-  --hue-rotate: 180deg;
-}
-
-[data-theme="java"] {
-  --primary-color: #f89820;
-  --secondary-color: #5382a1;
-  --bg-color: #ffffff;
-  --text-color: #5382a1;
-  --url-cursor: url("../generic/cursor2.cur");
-  --url-pointer: url("../generic/pointer2.cur");
-  --hue-rotate: 170deg;
+  --sizeS: calc(4vh + 3vw);
+  --sizeM: calc(8vh + 5vw);
+  --sizeL: calc(12vh + 7vw);
+  --sizeXL: calc(16vh + 11vw);
 }
 
 [data-theme="console"] {
@@ -23,9 +14,6 @@
   --secondary-color: #004511;
   --bg-color: #0a0a0a;
   --text-color: #00b700;
-  --url-cursor: url("../generic/cursor2.cur");
-  --url-pointer: url("../generic/pointer2.cur");
-  --hue-rotate: 50deg;
 }
 
 body {
@@ -94,7 +82,6 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: none;
   background: var(--bg-color);
-  font-family: "Space Mono", monospace;
   -webkit-text-fill-color: var(--text-color);
   -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset;
   outline: 2px solid var(--primary-color);
@@ -108,7 +95,6 @@ select:-webkit-autofill:focus {
   content: "> ";
   position: relative;
   color: var(--primary-color);
-  font-family: "Space Mono", monospace;
   font-weight: 900;
   font-size: 1.2rem;
   line-height: 1rem;
@@ -119,7 +105,7 @@ select:-webkit-autofill:focus {
 
 .button {
   color: var(--primary-color);
-  font-family: "Space Mono", monospace;
+  font-family: monospace;
   font-size: 1rem;
   font-weight: 800;
   padding: 0 0.5rem;
