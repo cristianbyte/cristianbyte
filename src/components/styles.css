@@ -1,8 +1,11 @@
 :root {
-  --primary-color: #000000;
-  --secondary-color: #3b3b3b;
-  --bg-color: #ffffff;
-  --text-color: #000000;
+  --c-pri: #000000;
+  --c-sec: #e7e7e7;
+  --c-hov: #f8f8f8;
+  --c-act: #12662a;
+  --c-see: #5fed83;
+  --c-bg: #ffffff;
+  --c-txt: #000000;
   --sizeS: calc(4vh + 3vw);
   --sizeM: calc(8vh + 5vw);
   --sizeL: calc(12vh + 7vw);
@@ -22,17 +25,17 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   overflow-y: scroll;
   position: relative;
 }
 
-button, a{
+button,
+a {
   cursor: var(--url-pointer), pointer;
 }
 
-button{
+button {
   position: relative;
   animation: none;
   background: none;
@@ -41,7 +44,8 @@ button{
   font-size: 1rem;
 }
 
-svg, path {
+svg,
+path {
   fill: var(--primary-color);
 }
 
@@ -50,9 +54,11 @@ svg, path {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--secondary-color);
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-color);
 }
@@ -62,6 +68,7 @@ svg, path {
   background: var(--primary-color);
   color: var(--bg-color);
 }
+
 ::-moz-selection {
   background: var(--text-color);
   color: var(--bg-color);
@@ -71,6 +78,7 @@ svg, path {
   color: var(--text-color);
   opacity: 0.5;
 }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -88,10 +96,10 @@ select:-webkit-autofill:focus {
 }
 
 :focus {
-  outline:none;
+  outline: none;
 }
 
-:focus::before{
+:focus::before {
   content: "> ";
   position: relative;
   color: var(--primary-color);
@@ -125,9 +133,13 @@ select:-webkit-autofill:focus {
 }
 
 @keyframes selected {
-  0%,30%,100% {
+
+  0%,
+  30%,
+  100% {
     opacity: 1;
   }
+
   60% {
     opacity: 0;
   }

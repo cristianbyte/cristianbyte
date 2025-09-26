@@ -4,42 +4,64 @@ import "./styles.css";
 
 <nav class="menu">
     <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/about">Acerca</a></li>
-        <li><a href="/blog">Blog</a></li>
         <li><a href="/contact">Contacto</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/about">Acerca</a></li>
+        <li><a href="/">Inicio</a></li>
     </ul>
 </nav>
 
 <style>
     .menu {
-        padding: 1rem;
+        position: relative;
+        max-height: 10vh;
+        top: 0;
         width: min(100%, 1500px);
     }
     .menu ul {
         display: flex;
         width: 100%;
         height: 100%;
-        flex-direction: row;
-        gap: 1rem;
+        flex-direction: row-reverse;
     }
     .menu a {
-        height: 100%;
+        transition: .4s ease;
         position: relative;
-        color: var(--secondary-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem 1rem;
+        color: var(--c-txt);
         text-decoration: none;
+        text-transform: uppercase;
+        padding-right: 2rem;
+        cursor: pointer;
     }
 
     .menu a:hover{
-        background-color: red;
+        background-color: var(--c-hov);
     }
     .menu a::after {
         position: absolute;
+        content: "";
         left: 0;
         top: 0;
-        content: "";
         width: 2px;
         height: 100%;
-        background-color: red;
+        background-color: var(--c-sec);
+    }
+    .menu a::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background-color: transparent;
+        transition: .4s ease;
+    }
+    
+    .menu a:hover::before{
+        background-color: var(--c-act);
     }
 </style>
