@@ -65,8 +65,8 @@ path {
 
 /* selection css */
 ::selection {
-  background: var(--primary-color);
-  color: var(--bg-color);
+  background: var(--c-pri);
+  color: var(--c-bg);
 }
 
 ::-moz-selection {
