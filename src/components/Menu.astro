@@ -4,10 +4,61 @@ import "./styles.css";
 
 <nav class="menu">
     <ul>
-        <li><a href="/contact">Contacto</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/about">Acerca</a></li>
-        <li><a href="/">Inicio</a></li>
+        <li>
+            <a href="/contact">
+                <span class="menu-text">Contact</span>
+                <span class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        ><path
+                            fill="currentColor"
+                            d="M.292 1.665L24.002 12L.293 22.336L3.94 12L.292 1.665ZM5.708 13l-2 5.665L18.999 12L3.708 5.336l2 5.664H11v2H5.708Z"
+                        ></path></svg
+                    >
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="/blog">
+                <span class="menu-text">Projects</span>
+                <span class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            fill="currentColor"
+                            d="M1 2.5h8.48l2 2.5H23v16H1V2.5Zm2 2V19h18V7H10.52l-2-2.5H3Z"
+                        >
+                        </path>
+                    </svg>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="/about">
+                <span class="menu-text">About</span>
+                <span class="menu-icon">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                        ><path
+                            fill-rule="evenodd"
+                            d="M256 42.7a213.3 213.3 0 1 0 0 426.6 213.3 213.3 0 0 0 0-426.6m0 384C161.9 426.7 85.3 350 85.3 256S162 85.3 256 85.3 426.7 162 426.7 256 350 426.7 256 426.7m26.7-256a25.8 25.8 0 0 1-26.5 26.6 25.8 25.8 0 0 1-26.8-27 25.8 25.8 0 0 1 26.8-26.3 25.8 25.8 0 0 1 26.5 26.7m-48 64h42.7v128h-42.7z"
+                        ></path></svg
+                    >
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <span class="menu-text">Home</span>
+                <span class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        ><path
+                            fill="#000"
+                            d="m12 1.198l10 8.334V22H2V9.532l10-8.334ZM10 20h4v-5h-4v5Zm6 0h4v-9.532l-8-6.666l-8 6.666V20h4v-7h8v7Z"
+                        ></path></svg
+                    >
+                </span>
+            </a>
+        </li>
     </ul>
 </nav>
 
@@ -25,7 +76,7 @@ import "./styles.css";
         flex-direction: row-reverse;
     }
     .menu a {
-        transition: .4s ease;
+        transition: 0.4s ease;
         position: relative;
         display: flex;
         justify-content: center;
@@ -37,8 +88,17 @@ import "./styles.css";
         padding-right: 2rem;
         cursor: pointer;
     }
+    .menu-icon {
+        display: none;
+    }
 
-    .menu a:hover{
+    .menu-icon svg {
+        width: var(--sizeXS);
+        height: var(--sizeXS);
+        fill: var(--c-pri);
+    }
+
+    .menu a:hover {
         background-color: var(--c-hov);
     }
     .menu a::after {
@@ -58,10 +118,19 @@ import "./styles.css";
         height: 2px;
         width: 100%;
         background-color: transparent;
-        transition: .4s ease;
+        transition: 0.4s ease;
     }
-    
-    .menu a:hover::before{
+
+    .menu a:hover::before {
         background-color: var(--c-act);
+    }
+
+    @media (max-width: 430px) {
+        .menu-icon {
+            display: inline;
+        }
+        .menu-text {
+            display: none;
+        }
     }
 </style>

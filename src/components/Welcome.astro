@@ -31,29 +31,30 @@ import './reset.css'
 		display: flex;
 		flex-direction: column;
 		height: 100vh;
-		width: min(100%, 1500px);
+		width: 100%;
+	}
+	
+	.title-section{
+		display: flex;
+		justify-content: center;
+		border-bottom: 2px solid var(--c-pri);
+		padding: 2rem;
 	}
 
-	.title-section{
-		width: 100%;
+	.name {
+		font-family: "Anta", sans-serif;
+		font-size: min(10rem, calc(100vw / 9));
+		line-height: min(10rem, calc(100vw / 9));
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 2px;
+		color: black;
 	}
 
 	.info-section{
 		height: auto;
 	}
 
-	.name {
-		font-family: "Anta", sans-serif;
-		font-size: min(7rem, calc(100vw / 9));
-		height: 10rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-transform: uppercase;
-		font-weight: 600;
-		letter-spacing: 2px;
-		color: black;
-	}
 
 	.title {
 		font-size: 1.5rem;

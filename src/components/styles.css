@@ -6,6 +6,7 @@
   --c-see: #5fed83;
   --c-bg: #ffffff;
   --c-txt: #000000;
+  --sizeXS: calc(2vh + 2.5vw);
   --sizeS: calc(4vh + 3vw);
   --sizeM: calc(8vh + 5vw);
   --sizeL: calc(12vh + 7vw);
