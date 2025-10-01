@@ -8,17 +8,6 @@ import "./reset.css";
 		<h1 class="name">Cristianbyte</h1>
 	</div>
 	<div class="info-section">
-		<div class="box-sextion">
-			<div class="box-element">
-				<div class="box-view">
-					<div class="box-side">Java</div>
-					<div class="box-side">Python</div>
-					<div class="box-side">SpringBoot</div>
-					<div class="box-side">JavaScript</div>
-				</div>
-			</div>
-			<div class="box-info">From delivery to dveloper</div>
-		</div>
 		<div class="photo-section">
 			<div class="photo-placeholder">
 				<img src="/images/Profilev3.png" alt="" srcset="" />
@@ -39,6 +28,7 @@ import "./reset.css";
 	.container {
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
 		height: 100vh;
 		width: 100%;
 	}
@@ -52,8 +42,8 @@ import "./reset.css";
 
 	.name {
 		font-family: "Anta", sans-serif;
-		font-size: min(10rem, calc(100vw / 9));
-		line-height: min(10rem, calc(100vw / 9));
+		font-size: min(10rem, calc(100vw / 8));
+		line-height: min(10rem, calc(100vw / 8));
 		text-transform: uppercase;
 		font-weight: 600;
 		letter-spacing: 2px;
@@ -66,57 +56,6 @@ import "./reset.css";
 		flex-direction: row;
 		justify-content: space-evenly;
 		align-items: center;
-	}
-	.box-sextion {
-		position: relative;
-	}
-	.box-element {
-		perspective: 500px;
-		height: 100px;
-	}
-
-	.box-view {
-		position: relative;
-		width: 150px;
-		height: 50px;
-		transform-style: preserve-3d;
-		animation: rotate 5s ease-in-out infinite;
-	}
-
-	.box-side {
-		position: absolute;
-		width: 200px;
-		height: 50px;
-		border: 2px solid var(--c-pri);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		backface-visibility: hidden;
-	}
-
-	.box-side:nth-child(1) {
-		transform: rotateX(0deg) translateZ(25px);
-	}
-
-	.box-side:nth-child(2) {
-		transform: rotateX(180deg) translateZ(25px);
-	}
-
-	.box-side:nth-child(3) {
-		transform: rotateX(90deg) translateZ(25px);
-	}
-
-	.box-side:nth-child(4) {
-		transform: rotateX(-90deg) translateZ(25px);
-	}
-
-	@keyframes rotate {
-		0% {
-			transform: rotateX(0deg);
-		}
-		100% {
-			transform: rotateX(-360deg);
-		}
 	}
 
 	.photo-section {
@@ -186,5 +125,14 @@ import "./reset.css";
 		border-bottom: none;
 		transform-origin: right;
 		z-index: -1;
+	}
+
+	@media (max-width: 430px) {
+		.photo-placeholder{ 
+			padding: 5vh 0;
+			img {
+			transform: translate(0, 0);
+		}
+	}
 	}
 </style>
