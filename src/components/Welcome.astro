@@ -1,4 +1,5 @@
 ---
+import Lane8 from "./lane8.astro";
 import "./styles.css";
 import "./reset.css";
 ---
@@ -13,6 +14,16 @@ import "./reset.css";
 				<img src="/images/Profilev3.png" alt="" srcset="" />
 			</div>
 		</div>
+	</div>
+	<div class="info-down">
+		<Lane8>
+			<div>Java</div>
+			<div>React</div>
+			<div>JavaScript</div>
+			<div>Astro</div>
+			<div>SpringBoot</div>
+			<div>Python</div>
+		</Lane8>
 	</div>
 </div>
 
@@ -125,6 +136,12 @@ import "./reset.css";
 		border-bottom: none;
 		transform-origin: right;
 		z-index: -1;
+	}
+
+	.info-down{
+		margin-top: auto;
+		width: 100%;
+		height: auto;
 	}
 
 	@media (max-width: 430px) {

@@ -1,0 +1,51 @@
+---
+import "./styles.css";
+---
+
+<div class="lane-container">
+    <div class="lane">
+        <slot />
+    </div>
+    <div class="lane" aria-hidden="true">
+        <slot />
+    </div>
+</div>
+
+<style>
+    .lane-container {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        gap: 1rem;
+    }
+    
+    .lane {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-size: var(--sizeS);
+        text-transform: uppercase;
+        line-height: var(--sizeS);
+        animation: scroll 20s linear infinite;
+        flex-shrink: 0;
+    }
+    
+    .lane > :global(*)::after {
+        content: "✦";
+        color: var(--c-pri);
+        margin: 0 4rem;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+    
+    /* .lane-container:hover .lane {
+        animation-play-state: paused;
+    } */
+</style>
