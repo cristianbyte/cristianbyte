@@ -23,17 +23,17 @@ import "./styles.css";
         display: flex;
         gap: 1rem;
         align-items: center;
-        font-size: var(--sizeS);
+        font-size: var(--sizeXS);
         text-transform: uppercase;
         line-height: var(--sizeS);
-        animation: scroll 20s linear infinite;
+        animation: scroll 60s linear infinite;
         flex-shrink: 0;
     }
     
     .lane > :global(*)::after {
         content: "✦";
         color: var(--c-pri);
-        margin: 0 4rem;
+        margin: 0 2rem;
     }
     
     @keyframes scroll {
