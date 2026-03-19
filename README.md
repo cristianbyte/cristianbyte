@@ -48,7 +48,16 @@ Building APIs, tools, and real-world projects — every single day.
 
 ## 📊 `stats/`
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=cristianbyte&theme=transparent&hide_border=true&border_radius=4)](https://git.io/streak-stats) ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=cristianbyte&show_icons=true&count_private=true&theme=transparent&hide_border=true&hide=issues,contribs&bg_color=00000000) ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=cristianbyte&layout=compact&hide_border=true&theme=transparent&bg_color=00000000&langs_count=6&hide=jupyter%20notebook,tex,css,php&exclude_repo=Pacman-AI)
+<p align="center">
+  <a href="https://git.io/streak-stats">
+    <img src="https://github-readme-streak-stats.herokuapp.com?user=cristianbyte&theme=transparent&hide_border=true&border_radius=4" />
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=cristianbyte&show_icons=true&count_private=true&theme=transparent&hide_border=true&hide=issues,contribs&bg_color=00000000" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=cristianbyte&layout=compact&hide_border=true&theme=transparent&bg_color=00000000&langs_count=6&hide=jupyter%20notebook,tex,css,php&exclude_repo=Pacman-AI" />
+</p>
 
 ---
 
